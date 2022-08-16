@@ -1,8 +1,8 @@
-include<stdio.h>
+include <stdio.h>
 
 
-int main(){
+void main(){
     float x =4.20;
     int z= x*100;
-    printf("%i",z)
+    printf("%i",z);
 }
