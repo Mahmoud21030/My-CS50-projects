@@ -23,14 +23,14 @@ void printer(int x ,int y)
     {
         x--;
         y++;
-        printf("%i %i",x,y);
+       // printf("%i %i",x,y);
         for (int i = x; i  != 0; i--){
-            printf("-");
+            printf(" ");
         }
         for (int z = y; z  != 0; z--){
-            printf("#\n");
+            printf("#");
         }
-
+        printf("\n");
         printer( x, y);
 
     }
