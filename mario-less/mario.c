@@ -1,6 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
-void printer(int x);
+void printer(int x ,int y);
 int main(void)
 {
     while (1)
@@ -8,7 +8,7 @@ int main(void)
         int num = get_int("Enter the Hight: ");
         if (num < 9 && num > 0)
         {
-            printer(num);
+            printer(num,0);
         }
         else
         {
@@ -17,7 +17,7 @@ int main(void)
     }
 }
 
-void printer(int x)
+void printer(int x ,int y)
 {
     if (x == 1)
     {
