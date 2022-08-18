@@ -10,10 +10,6 @@ int main(void)
         {
             printer(num,0);
         }
-        else
-        {
-            break;
-        }
     }
 }
 
