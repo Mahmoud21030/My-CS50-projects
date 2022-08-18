@@ -19,14 +19,15 @@ int main(void)
 
 void printer(int x)
 {
-    else if (x == 1)
+    if (x == 1)
     {
-        printf(" ");
+        printf("#\n");
     }
     else
     {
+        printf("-");
         x--;
-        printer( x);
+        printer(x);
     }
     return;
 }
