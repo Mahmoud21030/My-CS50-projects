@@ -9,6 +9,7 @@ int main(void)
         if (num < 9 && num > 0)
         {
             printer(num,0);
+            break;
         }
     }
 }
