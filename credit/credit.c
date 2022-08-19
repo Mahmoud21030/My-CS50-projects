@@ -6,11 +6,9 @@
 
 void checksum(int x);
 int getlen(int y);
+void digitize(int card);
+int array[16];
 
-int Mas[16];
-int Am[15];
-int vis16[16];
-int vis[13];
 
 int main(void)
 {
@@ -33,4 +31,12 @@ int getlen(int y){
     return 1;
     else{
     return ceil(log10(y+0.0001));}
+}
+
+void digitize(int card){
+    int l = getlen(card);
+    for(int i =0; i< l;i++){
+        array[i]=
+    }
+
 }
