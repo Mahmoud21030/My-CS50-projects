@@ -3,15 +3,16 @@
 #define NELEMS(x)  (sizeof(x) / sizeof((x)[0]))
 
 void checksum(int x);
-int array[16];
+int Mas[16];
+int Am[15];
+int vis16[16];
+int vis[13];
 
 int main(void)
 {
     int card = get_int("enter Card number");
     checksum(card);
-    string x = "90";
-    array[5]='';
-    printf("%li",NELEMS(array));
+
 }
 
 void checksum(int x)
