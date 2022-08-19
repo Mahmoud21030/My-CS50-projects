@@ -4,7 +4,8 @@
 
 #define NELEMS(x) (sizeof(x) / sizeof((x)[0]))
 
-void sum(int x);
+void checksum(int x);
+int sum(int x);
 int getlen(int y);
 void digitize(int card);
 int array[16];
@@ -15,24 +16,26 @@ int main(void)
 
     digitize(card);
     printf("%i\n", array[0]);
-    sum(card);
+    checksum(card);
 }
 
-void sum(int x)
+void checksum(int x)
 {
     int sum = 0;
     int l = getlen(x);
-    for (int i = l - 1; i >= 0; i -= 1)
+    for (int i = l - 2; i >= 0; i -= 2)
+    {
+        sum += 2*sum(array[i]);
+
+    }
+for (int i = l - 1; i >= 0; i -= 2)
     {
         sum += array[i];
 
     }
-
  printf("%i\n", sum);
     return;
 }
-
-
 
 int getlen(int y)
 {
@@ -44,8 +47,6 @@ int getlen(int y)
     }
 }
 
-
-
 void digitize(int card)
 {
     int l = getlen(card);
@@ -54,4 +55,19 @@ void digitize(int card)
         array[i] = card / pow(10, (l - i - 1));
         card = card - array[i] * pow(10, (l - i - 1));
     }
+}
+
+
+int sum(int x)
+{
+    int sum = 0;
+    int l = getlen(x);
+    for (int i = l - 1; i >= 0; i -= 1)
+    {
+        sum += array[i];
+
+    }
+
+ printf("%i\n", sum);
+    return sum;
 }
