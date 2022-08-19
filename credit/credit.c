@@ -18,8 +18,8 @@ int main(void)
     checksum(card);
 
     printf("%i\n",getlen(card));
-    int z = (ceil(log(card)));
-    printf("%i",z);
+
+   
 }
 
 void checksum(int x)
@@ -29,5 +29,5 @@ void checksum(int x)
 }
 
 int getlen(int y){
-    return ceil(log(y));
+    return ceil(log10(y));
 }
