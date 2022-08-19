@@ -10,6 +10,7 @@ int main(void)
     int card = get_int("enter Card number");
     checksum(card);
     string x = "90";
+    array[5]='';
     printf("%li",NELEMS(array));
 }
 
