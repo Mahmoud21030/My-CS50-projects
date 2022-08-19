@@ -18,7 +18,7 @@ int main(void)
     digitize(card);
    // printf("%i\n", array[0]);
     checksum(card);
-    bank(card);
+   
 
 }
 
