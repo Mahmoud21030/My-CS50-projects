@@ -35,8 +35,8 @@ void checksum(double x)
         sum += (array[i]);
 
     }
-    if
- printf("%i\n", sum);
+    if(sum % 10 != 0){ printf("INVALID");}
+    printf("%i\n", sum);
     return;
 }
 
