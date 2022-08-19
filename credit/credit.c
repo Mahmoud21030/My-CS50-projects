@@ -6,8 +6,8 @@
 
 void checksum(int x);
 int sumf(int x);
-int getlen(int y);
-void digitize(int card);
+int getlen(double y);
+void digitize(double card);
 int array[19];
 
 int main(void)
@@ -15,8 +15,9 @@ int main(void)
     double  card = get_int("enter Card number");
 
     digitize(card);
-    printf("%i\n", array[0]);
-    checksum(card);
+    printf("%d\n", array[0]);
+   //  checksum(card);
+
 }
 
 void checksum(int x)
@@ -33,7 +34,7 @@ void checksum(int x)
     return;
 }
 
-int getlen(int y)
+int getlen(double y)
 {
     if (y < 1)
         return 1;
@@ -43,7 +44,7 @@ int getlen(int y)
     }
 }
 
-void digitize(int card)
+void digitize(double card)
 {
     int l = getlen(card);
     for (int i = 0; i < l; i++)
