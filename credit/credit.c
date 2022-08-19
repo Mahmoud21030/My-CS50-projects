@@ -89,11 +89,11 @@ void bank(double card){
     if (l==16 ){
         if(array[0]==4)
         printf("VISA\n");
-        else if (array[0]==3 && (array[1]==7 || array[1]== 4))
+        else if ( array[0]==5 &&(array[1]<6 && array[1]>0))
         printf("MASTERCARD\n");
 
     }
-    else if (l==15 && array[0]==5 &&(array[1]<6 && array[1]>0)){
+    else if (l==15 && array[0]==3 && (array[1]==7 || array[1]== 4)){
         printf("AMEX\n");
 
     }
