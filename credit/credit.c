@@ -28,7 +28,7 @@ void checksum(int x)
         sum += 2*sumf(array[i]);
 
     }
-    
+
  printf("%i\n", sum);
     return;
 }
@@ -58,11 +58,7 @@ int sumf(int x)
 {
     int sum = 0;
     int l = getlen(x);
-    for (int i = l - 1; i >= 0; i -= 1)
-    {
-        sum += array[i];
-
-    }
+    
 
  printf("%i\n", sum);
     return sum;
