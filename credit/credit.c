@@ -29,5 +29,8 @@ void checksum(int x)
 }
 
 int getlen(int y){
-    return ceil(log10(y+0.0001));
+    if (y==0)
+    return 1;
+    else{
+    return ceil(log10(y+0.0001));}
 }
