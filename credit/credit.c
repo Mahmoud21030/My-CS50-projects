@@ -27,6 +27,11 @@ void checksum(int x)
         sum += 2*array[i];
 
     }
+    for (int i = l - 1; i >= 0; i -= 2)
+    {
+        sum += 2*array[i];
+
+    }
  printf("%i\n", sum);
     return;
 }
