@@ -36,7 +36,7 @@ void checksum(double x)
         sum += (array[i]);
 
     }
-    if(sum % 10 != 0){ printf("INVALID");}
+    if(sum % 10 != 0){ printf("INVALID\n");}
     //printf("%i\n", sum);
     return;
 }
@@ -85,14 +85,20 @@ int sumf(int x)
 void bank(double card){
     int l = getlen(card);
     if (l==16){
+        if(array[0]==4)
+        printf("VISA\n");
+        else
+        printf("Mastercard\n");
 
     }
-    esle if (l==15){
+    else if (l==15){
+        printf("AMEX\n");
 
     }
-    esle if (l==13){
+    else if (l==13){
+         printf("VISA\n");
 
     }
-    else{printf("INVALID");}
+    else{printf("INVALID\n");}
 
 }
