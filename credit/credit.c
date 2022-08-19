@@ -17,7 +17,9 @@ int main(void)
     int card = get_int("enter Card number");
     checksum(card);
 
-    printf("%i",getlen(card));
+    printf("%i\n",getlen(card));
+    int z = (ceil(log(card)));
+    printf("%i",z);
 }
 
 void checksum(int x)
