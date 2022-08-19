@@ -8,14 +8,15 @@ void checksum(double x);
 int sumf(int x);
 int getlen(double y);
 void digitize(double card);
-int array[19];
+void bank(double card);
+int array[16];
 
 int main(void)
 {
     double  card = get_double("enter Card number");
 
     digitize(card);
-    printf("%i\n", array[0]);
+   // printf("%i\n", array[0]);
     checksum(card);
 
 }
@@ -36,7 +37,7 @@ void checksum(double x)
 
     }
     if(sum % 10 != 0){ printf("INVALID");}
-    printf("%i\n", sum);
+    //printf("%i\n", sum);
     return;
 }
 
@@ -74,6 +75,24 @@ int sumf(int x)
       x         = x / 10;
    }
 
- printf("%i\n", sum);
+ //printf("%i\n", sum);
     return sum;
+}
+
+
+
+//kind of card
+void bank(double card){
+    int l = getlen(card);
+    if (l==16){
+
+    }
+    esle if (l==15){
+
+    }
+    esle if (l==13){
+
+    }
+    else{printf("INVALID");}
+
 }
