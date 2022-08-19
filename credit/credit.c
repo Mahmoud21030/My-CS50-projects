@@ -55,7 +55,7 @@ void digitize(int card)
 
 
 int sumf(int x)
-{
+{   int remainder=0;
     int sum = 0;
     while (x != 0)
    {
