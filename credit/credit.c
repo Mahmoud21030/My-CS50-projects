@@ -4,7 +4,7 @@
 
 #define NELEMS(x) (sizeof(x) / sizeof((x)[0]))
 
-void checksum(int x);
+void checksum(double x);
 int sumf(int x);
 int getlen(double y);
 void digitize(double card);
@@ -20,7 +20,7 @@ int main(void)
 
 }
 
-void checksum(int x)
+void checksum(double x)
 {
     int sum = 0;
     int l = getlen(x);
@@ -29,10 +29,17 @@ void checksum(int x)
         sum += sumf(2*array[i]);
 
     }
+    for (int i = l - 1; i >= 0; i -= 2)
+    {
+        sum += (array[i]);
 
+    }
  printf("%i\n", sum);
     return;
 }
+
+
+
 
 int getlen(double y)
 {
