@@ -18,6 +18,7 @@ int main(void)
     digitize(card);
    // printf("%i\n", array[0]);
     checksum(card);
+    bank(card);
 
 }
 
@@ -37,7 +38,7 @@ void checksum(double x)
 
     }
     if(sum % 10 != 0){ printf("INVALID\n");}
-    else(bank(card);)
+    else{bank(x);}
     //printf("%i\n", sum);
     return;
 }
