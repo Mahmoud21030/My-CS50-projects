@@ -22,12 +22,12 @@ void checksum(int x)
 {
     int sum = 0;
     int l = getlen(x);
-    for (int i = l - 2; i <= 0; i -= 2)
+    for (int i = l - 2; i >= 0; i -= 2)
     {
         sum += array[i];
-        printf("%i\n", sum);
-    }
 
+    }
+ printf("%i\n", sum);
     return;
 }
 
