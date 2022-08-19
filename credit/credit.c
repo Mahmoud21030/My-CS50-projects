@@ -37,6 +37,7 @@ void checksum(double x)
 
     }
     if(sum % 10 != 0){ printf("INVALID\n");}
+    else(bank(card);)
     //printf("%i\n", sum);
     return;
 }
