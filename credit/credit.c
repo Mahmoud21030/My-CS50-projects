@@ -19,7 +19,7 @@ int main(void)
 
     printf("%i\n",getlen(card));
 
-   
+
 }
 
 void checksum(int x)
@@ -29,5 +29,5 @@ void checksum(int x)
 }
 
 int getlen(int y){
-    return ceil(log10(y));
+    return ceil(log10(y+0.0001));
 }
