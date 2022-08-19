@@ -36,6 +36,8 @@ void checksum(int x)
     return;
 }
 
+
+
 int getlen(int y)
 {
     if (y < 1)
@@ -45,6 +47,8 @@ int getlen(int y)
         return ceil(log10(y + 0.0001));
     }
 }
+
+
 
 void digitize(int card)
 {
