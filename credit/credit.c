@@ -20,6 +20,7 @@ int main(void)
 
 }
 
+// =checking valid or not
 void checksum(double x)
 {
     int sum = 0;
@@ -34,6 +35,7 @@ void checksum(double x)
         sum += (array[i]);
 
     }
+    if
  printf("%i\n", sum);
     return;
 }
