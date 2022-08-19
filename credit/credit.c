@@ -91,6 +91,7 @@ void bank(double card){
         printf("VISA\n");
         else if ( array[0]==5 &&(array[1]<6 && array[1]>0))
         printf("MASTERCARD\n");
+        else{printf("INVALID\n");}
 
     }
     else if (l==15 && array[0]==3 && (array[1]==7 || array[1]== 4)){
