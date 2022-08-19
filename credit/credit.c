@@ -14,8 +14,8 @@ int main(void)
 {
     int card = get_int("enter Card number");
     checksum(card);
-
-    printf("%i\n",getlen(card));
+    digitize(card);
+    printf("%i\n",array[0]);
 
 
 }
@@ -36,7 +36,8 @@ int getlen(int y){
 void digitize(int card){
     int l = getlen(card);
     for(int i =0; i< l;i++){
-        array[i]=card/10ex[]
+        array[i]=card/pow(10,(l-i+1));
+        card=card-array[i]*pow(10,(l-i+1));
     }
 
 }
