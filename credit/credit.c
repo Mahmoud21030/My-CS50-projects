@@ -13,13 +13,11 @@ int array[16];
 
 int main(void)
 {
-    double  card = get_double("enter Card number");
+    double card = get_double("enter Card number");
 
     digitize(card);
-   // printf("%i\n", array[0]);
+    // printf("%i\n", array[0]);
     checksum(card);
-
-
 }
 
 // =checking valid or not
@@ -29,22 +27,24 @@ void checksum(double x)
     int l = getlen(x);
     for (int i = l - 2; i >= 0; i -= 2)
     {
-        sum += sumf(2*array[i]);
-//printf("%i\n", sum);
+        sum += sumf(2 * array[i]);
+        // printf("%i\n", sum);
     }
     for (int i = l - 1; i >= 0; i -= 2)
     {
         sum += (array[i]);
-
     }
-    if(sum % 10 != 0){ printf("INVALID\n");}
-    else{bank(x);}
+    if (sum % 10 != 0)
+    {
+        printf("INVALID\n");
+    }
+    else
+    {
+        bank(x);
+    }
 
     return;
 }
-
-
-
 
 int getlen(double y)
 {
@@ -66,42 +66,46 @@ void digitize(double card)
     }
 }
 
-
 int sumf(int x)
-{   int remainder=0;
+{
+    int remainder = 0;
     int sum = 0;
     while (x != 0)
-   {
-      remainder = x % 10;
-      sum       = sum + remainder;
-      x         = x / 10;
-   }
+    {
+        remainder = x % 10;
+        sum = sum + remainder;
+        x = x / 10;
+    }
 
- //printf("%i\n", sum);
+    // printf("%i\n", sum);
     return sum;
 }
 
-
-
-//kind of card
-void bank(double card){
+// kind of card
+void bank(double card)
+{
     int l = getlen(card);
-    if (l==16 ){
-        if(array[0]==4)
-        printf("VISA\n");
-        else if ( array[0]==5 &&(array[1]<6 && array[1]>0))
-        printf("MASTERCARD\n");
-        else{printf("INVALID\n");}
-
+    if (l == 16)
+    {
+        if (array[0] == 4)
+            printf("VISA\n");
+        else if (array[0] == 5 && (array[1] < 6 && array[1] > 0))
+            printf("MASTERCARD\n");
+        else
+        {
+            printf("INVALID\n");
+        }
     }
-    else if (l==15 && array[0]==3 && (array[1]==7 || array[1]== 4)){
+    else if (l == 15 && array[0] == 3 && (array[1] == 7 || array[1] == 4))
+    {
         printf("AMEX\n");
-
     }
-    else if (l==13 && array[0]==4){
-         printf("VISA\n");
-
+    else if (l == 13 && array[0] == 4)
+    {
+        printf("VISA\n");
     }
-    else{printf("INVALID\n");}
-
+    else
+    {
+        printf("INVALID\n");
+    }
 }
