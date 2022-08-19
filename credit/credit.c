@@ -36,7 +36,7 @@ int getlen(int y){
 void digitize(int card){
     int l = getlen(card);
     for(int i =0; i< l;i++){
-        array[i]=
+        array[i]=card/10ex[]
     }
 
 }
