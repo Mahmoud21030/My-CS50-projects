@@ -15,7 +15,7 @@ int main(void)
     double  card = get_int("enter Card number");
 
     digitize(card);
-    printf("%d\n", array[0]);
+    printf("%i\n", array[0]);
    //  checksum(card);
 
 }
