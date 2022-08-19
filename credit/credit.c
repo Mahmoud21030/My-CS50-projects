@@ -30,7 +30,7 @@ void checksum(double x)
     for (int i = l - 2; i >= 0; i -= 2)
     {
         sum += sumf(2*array[i]);
-printf("%i\n", sum);
+//printf("%i\n", sum);
     }
     for (int i = l - 1; i >= 0; i -= 2)
     {
