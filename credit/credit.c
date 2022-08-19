@@ -39,7 +39,7 @@ void checksum(double x)
     }
     if(sum % 10 != 0){ printf("INVALID\n");}
     else{bank(x);}
-    //printf("%i\n", sum);
+    printf("%i\n", sum);
     return;
 }
 
