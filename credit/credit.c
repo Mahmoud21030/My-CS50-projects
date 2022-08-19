@@ -86,18 +86,18 @@ int sumf(int x)
 //kind of card
 void bank(double card){
     int l = getlen(card);
-    if (l==16){
+    if (l==16 ){
         if(array[0]==4)
         printf("VISA\n");
-        else
+        else if (array[0]==3 && (array[1]==7 || array[1]== 4))
         printf("MASTERCARD\n");
 
     }
-    else if (l==15){
+    else if (l==15 && array[0]==5 &&(array[1]<6 && array[1]>0)){
         printf("AMEX\n");
 
     }
-    else if (l==13){
+    else if (l==13 && array[0]==4){
          printf("VISA\n");
 
     }
