@@ -8,11 +8,11 @@ void checksum(int x);
 int sumf(int x);
 int getlen(int y);
 void digitize(int card);
-int array[16];
+int array[19];
 
 int main(void)
 {
-    int card = get_int("enter Card number");
+    double  card = get_int("enter Card number");
 
     digitize(card);
     printf("%i\n", array[0]);
@@ -25,7 +25,7 @@ void checksum(int x)
     int l = getlen(x);
     for (int i = l - 2; i >= 0; i -= 2)
     {
-        sum += 2*sumf(array[i]);
+        sum += sumf(2*array[i]);
 
     }
 
