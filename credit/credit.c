@@ -18,7 +18,7 @@ int main(void)
     digitize(card);
    // printf("%i\n", array[0]);
     checksum(card);
-   
+
 
 }
 
@@ -90,7 +90,7 @@ void bank(double card){
         if(array[0]==4)
         printf("VISA\n");
         else
-        printf("Mastercard\n");
+        printf("MASTERCARD\n");
 
     }
     else if (l==15){
