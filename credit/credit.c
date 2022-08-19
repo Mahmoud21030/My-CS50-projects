@@ -8,8 +8,8 @@ int main(void)
 {
     int card = get_int("enter Card number");
     checksum(card);
-    string x = "50";
-    printf("%c",x[0]);
+    string x = "90";
+    printf("%i",x[0]);
 }
 
 void checksum(int x)
