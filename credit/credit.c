@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 void checksum(int x);
-
+int array[16];
 
 int main(void)
 {
