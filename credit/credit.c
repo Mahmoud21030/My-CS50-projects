@@ -57,12 +57,11 @@ void digitize(int card)
 int sumf(int x)
 {
     int sum = 0;
-    int l = getlen(x);
     while (x != 0)
    {
       remainder = x % 10;
       sum       = sum + remainder;
-      t         = x / 10;
+      x         = x / 10;
    }
 
  printf("%i\n", sum);
