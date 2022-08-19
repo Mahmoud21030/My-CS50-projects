@@ -29,7 +29,7 @@ void checksum(int x)
 }
 
 int getlen(int y){
-    if (y==0)
+    if (y<1 )
     return 1;
     else{
     return ceil(log10(y+0.0001));}
