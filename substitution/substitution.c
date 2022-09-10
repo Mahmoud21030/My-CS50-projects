@@ -9,8 +9,7 @@ char Sub[26] = "abcdefghijklmnopqrstuvwxyz";
 
 int main(int argc, string argv[])
 {
-    argv[1] = "YTNSHKVEFXRBAUQZCLWDMIPGJO";
-    argc = 2;
+    
     int x = check( argc,  argv[1]);
     printf("%d",x);
 }
