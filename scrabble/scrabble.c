@@ -23,15 +23,16 @@ int main(void)
 int compute_score(string word)
 {
     // Compute and return score for string
+    int counter=0;
+    word[]="ali"
     for (int i = 0, n = strlen(word); i < n; i++)
     {
         if ( isalpha(word[i]) )
         {
-            tolower( word[i] ) //to lowercase char
+            word[i]=tolower( word[i] );//to lowercase char
             word[i]-=97;
-
+            counter+=word[i];
         }
     }
-
-    return 0;
+return counter;
 }
