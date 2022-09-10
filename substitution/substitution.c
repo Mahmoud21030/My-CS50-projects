@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#define isalphab(word) (isalpha(word)&&1)
 
 char Sub[26] = "abcdefghijklmnopqrstuvwxyz";
 
@@ -12,13 +13,13 @@ int main(int argc, string argv[])
 int check(string code, int count)
 {
     int c = 0;
-    if (argc == 2) // check if there is number or no
+    if (count == 2) // check if there is number or no
     {
         if (strlen(code) == 26) // check 26 char
         {
             for (int i = 0; i < 26; i++) // check all alpha
             {
-                c += (1 && isaplha(code));
+                c += isalphab(code[i]);
 
             }
             printf("%d",c);
@@ -34,4 +35,5 @@ int check(string code, int count)
     {
         printf("Usage: ./substitution key");
     }
+    return 0;
 }
