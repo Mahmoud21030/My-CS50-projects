@@ -17,14 +17,17 @@ int main(void)
     // Score both words
     int score1 = compute_score(word1);
     int score2 = compute_score(word2);
-
+    printf("")
     // TODO: Print the winner
 }
 
 int compute_score(string word)
 {
     // Compute and return score for string
-    for(int i=0 , n =strlen(word); i<n;i++ );
+    for (int i = 0, n = strlen(word); i < n; i++)
+    {
 
+    }
 
+    return 0;
 }
