@@ -3,7 +3,7 @@
 #include <string.h>
 #include <ctype.h>
 
-char Sub[26] = {a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, f, w, x, y, z};
+char Sub[26] = "abcdefghijklmnopqrstuvwxyz";
 
 int main(int argc, string argv[])
 {
