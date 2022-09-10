@@ -27,7 +27,9 @@ int compute_score(string word)
     {
         if ( isalpha(word[i]) )
         {
+            tolower( word[i] ) //to lowercase char
             
+
         }
     }
 
