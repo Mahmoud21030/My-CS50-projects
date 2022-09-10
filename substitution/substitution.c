@@ -25,8 +25,8 @@ int numalpha(string code){
 }
 
 int check(int argc, string argv){
-    int n = strlen(argv[1]);
-   int na = numalpha(argv[1]);
+    int n = strlen(argv);
+   int na = numalpha(argv);
     if (argc == 2) // check if there is number or no
     {              ///////////////////////////////////////////////////////////////////////////
         if (na > 0)
