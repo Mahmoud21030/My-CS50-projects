@@ -18,10 +18,17 @@ int main(int argc, string argv[])
     strcpy(original, word);
     original[1]='a';
 
+    for (int i = 0, n = strlen(argv[1]); i < n; i++) // to lowercase char
+    {
+       (argv[1])[i] = tolower(argv[1][i]);
+        (argv[1])[i] -= 97; // mapping Alpha into 0.1.2
+    }
+
     for (int i = 0, n = strlen(word); i < n; i++) // to lowercase char
     {
         word[i] = tolower(word[i]);
-        word[i] -= 97; // mapping Alpha into 0.1.2
+       word[i] = argv[1][word[i] - 97]; // mapping Alpha into 0.1.2
+
     }
 
     printf("%s %s", original , word);
