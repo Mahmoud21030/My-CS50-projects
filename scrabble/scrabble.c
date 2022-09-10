@@ -25,7 +25,10 @@ int compute_score(string word)
     // Compute and return score for string
     for (int i = 0, n = strlen(word); i < n; i++)
     {
-
+        if ( isalpha(word[i]) )
+        {
+            
+        }
     }
 
     return 0;
