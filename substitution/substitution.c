@@ -16,8 +16,9 @@ int main(int argc, string argv[])
 int check(string code,int count){
     if (argc == 2) // check if there is number or no
     {
-        if (strlen(code) == 26)
-        {
+        if (strlen(code) == 26) //check 26 char
+        { //check all alpha
+            for(counter)
 
 
         }
