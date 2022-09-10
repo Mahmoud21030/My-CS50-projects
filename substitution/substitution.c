@@ -7,7 +7,7 @@ int check(string code, int count);
 char Sub[26] = "abcdefghijklmnopqrstuvwxyz";
 
 int main(int argc, string argv[])
-{   argv[1]="YTNSHKVEFXRBAUQZCLWDMIPGJO";
+{   argv[1]="YTNSHKVEFXRBAUQZCLWDMIPGJ";
     argc =2;
     int x = check(argv[1], argc);
 }
