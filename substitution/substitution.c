@@ -8,7 +8,7 @@ char Sub[26] = "abcdefghijklmnopqrstuvwxyz";
 
 int main(int argc, string argv[])
 {
-    argv[1] = "YTNSHKVEFXRBAUQZCLWDMIPGJ";
+    argv[1] = "YTNSHKVEFXRBAUQZCLWDMIPGJO";
     argc = 2;
    int n = strlen(argv[1]);
    int na = numalpha(argv[1]);
