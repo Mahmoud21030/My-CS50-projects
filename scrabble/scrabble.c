@@ -21,17 +21,17 @@ int main(void)
     // TODO: Print the winner
     if (score1 > score2)
     {
-        printf("Player 1 wins!\n");
+        printf("Player 1 wins!\n ");
     }
 
-    else if (score1 > score2)
+    else if (score1 < score2)
     {
-        printf("Player 2 wins!\n");
+        printf("Player 2 wins!\n ");
     }
 
-    else
+    else if (score1 == score2)
     {
-        printf("Tie!\n");
+        printf("Tie!\n ");
     }
 }
 
@@ -45,8 +45,8 @@ int compute_score(string word)
         if (isalpha(word[i]))
         {
             word[i] = tolower(word[i]); // to lowercase char
-            word[i] -= 97;
-            counter += word[i];
+            word[i] -= 97;              // mapping Alpha into 0.1.2
+            counter += POINTS[(int)word[i]];
         }
     }
     return counter;
