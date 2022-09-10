@@ -13,8 +13,9 @@ int main(int argc, string argv[])
     printf("%d", x);
 
     string word = get_string("plaintext:  ");
+    char original[strlen(word)];
 
-    //strcpy(original, word);
+    strcpy(original, word);
 
 
     for (int i = 0, n = strlen(word); i < n; i++) // to lowercase char
