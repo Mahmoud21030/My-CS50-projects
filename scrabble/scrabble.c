@@ -17,6 +17,7 @@ int main(void)
     // Score both words
     int score1 = compute_score(word1);
     int score2 = compute_score(word2);
+    printf("%i %i",score1,score2);
     // TODO: Print the winner
 }
 
@@ -24,7 +25,7 @@ int compute_score(string word)
 {
     // Compute and return score for string
     int counter=0;
-    word[]="ali"
+
     for (int i = 0, n = strlen(word); i < n; i++)
     {
         if ( isalpha(word[i]) )
