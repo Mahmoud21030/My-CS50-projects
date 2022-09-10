@@ -9,10 +9,17 @@ char Sub[26] = "abcdefghijklmnopqrstuvwxyz";
 
 int main(int argc, string argv[])
 {
-    
+
     int x = check( argc,  argv[1]);
     printf("%d",x);
 }
+
+
+
+
+
+
+
 
 int numalpha(string code){
     int c=0;
