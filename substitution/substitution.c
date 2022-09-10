@@ -12,14 +12,14 @@ int main(int argc, string argv[])
     int x = check( argc,  argv[1]);
     printf("%d",x);
 
-    string ip = get_string("plaintext:  ");
-    for (int i = 0, n = strlen(ip); i < n; i++)
+    string word = get_string("plaintext:  ");
+    string original = word ;
+    for (int i = 0, n = strlen(word); i < n; i++)// to lowercase char
     {
-        if (isalpha(ip))
+        if (isalpha(word[i]))
         {
-            word[i] = tolower(word[i]); // to lowercase char
+            word[i] = tolower(word[i]);
             word[i] -= 97;              // mapping Alpha into 0.1.2
-            counter += POINTS[(int)word[i]];
         }
     }
 
