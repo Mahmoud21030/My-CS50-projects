@@ -9,21 +9,21 @@ char Sub[26] = "abcdefghijklmnopqrstuvwxyz";
 
 int main(int argc, string argv[])
 {
-    int x = check( argc,  argv[1]);
-    printf("%d",x);
+    int x = check(argc, argv[1]);
+    printf("%d", x);
 
     string word = get_string("plaintext:  ");
-    string original;
-    strcpy(original, word);
-    for (int i = 0, n = strlen(word); i < n; i++)// to lowercase char
-    {
-        if (isalpha(word[i]))
-        {
-            word[i] = tolower(word[i]);
-            word[i] -= 97;              // mapping Alpha into 0.1.2
-        }
-    }
+    string original = "h";
+    original[1]='a';
+    printf("%s %s",word,original);
+    //strcpy(original, word);
 
+
+    for (int i = 0, n = strlen(word); i < n; i++) // to lowercase char
+    {
+        word[i] = tolower(word[i]);
+        word[i] -= 97; // mapping Alpha into 0.1.2
+    }
 }
 
 
@@ -31,10 +31,9 @@ int main(int argc, string argv[])
 
 
 
-
-
-int numalpha(string code){
-    int c=0;
+int numalpha(string code)
+{
+    int c = 0;
     for (int i = 0; i < 26; i++) // check all alpha
     {
         c += isalphab(code[i]);
@@ -42,9 +41,10 @@ int numalpha(string code){
     return c;
 }
 
-int check(int argc, string argv){
+int check(int argc, string argv)
+{
     int n = strlen(argv);
-   int na = numalpha(argv);
+    int na = numalpha(argv);
     if (argc == 2) // check if there is number or no
     {              ///////////////////////////////////////////////////////////////////////////
         if (na > 0)
@@ -80,5 +80,4 @@ int check(int argc, string argv){
         printf("Usage: ./substitution key");
         return 0;
     }
-
 }
