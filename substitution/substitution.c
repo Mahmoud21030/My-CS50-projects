@@ -8,6 +8,7 @@ char Sub[26] = "abcdefghijklmnopqrstuvwxyz";
 
 int main(int argc, string argv[])
 {   argv[1]="YTNSHKVEFXRBAUQZCLWDMIPGJO";
+    argc =2;
     int x = check(argv[1], argc);
 }
 
