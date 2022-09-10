@@ -13,7 +13,8 @@ int main(int argc, string argv[])
     printf("%d",x);
 
     string word = get_string("plaintext:  ");
-    string original = word ;
+    string original;
+    strcpy(original, word);
     for (int i = 0, n = strlen(word); i < n; i++)// to lowercase char
     {
         if (isalpha(word[i]))
