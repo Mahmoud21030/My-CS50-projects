@@ -3,23 +3,28 @@
 #include <string.h>
 #include <ctype.h>
 #define isalphab(word) (isalpha(word) && 1)
-int numalpha(string code, int count);
+int numalpha(string code);
 char Sub[26] = "abcdefghijklmnopqrstuvwxyz";
 
 int main(int argc, string argv[])
 {
     argv[1] = "YTNSHKVEFXRBAUQZCLWDMIPGJ";
     argc = 2;
-    n = strlen(argv);
-    na = numalpha(argv);
+   int n = strlen(argv[1]);
+   int na = numalpha(argv[1]);
     if (argc == 2) // check if there is number or no
     {              ///////////////////////////////////////////////////////////////////////////
         if (na > 0)
         {
             if (n == 26)
             {
-                if
-                printf("Key must contain 26 characters.");
+                if (na == 26)
+                {
+                }
+                else
+                {
+                    printf("Key must contain 26 characters.");
+                }
             }
             else
             {
@@ -40,8 +45,8 @@ int main(int argc, string argv[])
     return 0;
 }
 
-int numalpha(string code, int count)
-{
+int numalpha(string code){
+    int c=0;
     for (int i = 0; i < 26; i++) // check all alpha
     {
         c += isalphab(code[i]);
