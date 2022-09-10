@@ -13,7 +13,16 @@ int main(int argc, string argv[])
     printf("%d",x);
 
     string ip = get_string("plaintext:  ");
-    
+    for (int i = 0, n = strlen(ip); i < n; i++)
+    {
+        if (isalpha(ip))
+        {
+            word[i] = tolower(word[i]); // to lowercase char
+            word[i] -= 97;              // mapping Alpha into 0.1.2
+            counter += POINTS[(int)word[i]];
+        }
+    }
+
 }
 
 
