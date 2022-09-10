@@ -13,9 +13,7 @@ int main(int argc, string argv[])
     printf("%d", x);
 
     string word = get_string("plaintext:  ");
-    string original = "h";
-    original[1]='a';
-    printf("%s %s",word,original);
+
     //strcpy(original, word);
 
 
