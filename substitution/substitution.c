@@ -9,9 +9,11 @@ char Sub[26] = "abcdefghijklmnopqrstuvwxyz";
 
 int main(int argc, string argv[])
 {
-
     int x = check( argc,  argv[1]);
     printf("%d",x);
+
+    string ip = get_string("plaintext:  ");
+    
 }
 
 
