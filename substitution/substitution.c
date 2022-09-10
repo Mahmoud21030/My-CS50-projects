@@ -16,13 +16,15 @@ int main(int argc, string argv[])
     char original[strlen(word)];
 
     strcpy(original, word);
-
+    original[1]='a';
 
     for (int i = 0, n = strlen(word); i < n; i++) // to lowercase char
     {
         word[i] = tolower(word[i]);
         word[i] -= 97; // mapping Alpha into 0.1.2
     }
+
+    printf("%s %s", original , word);
 }
 
 
