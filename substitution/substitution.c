@@ -5,13 +5,15 @@
 
 int main(int argc, string argv[])
 {
-    if (argc == 2 &) // check if there is number or no
+    if (argc == 2) // check if there is number or no
     {
-
+        if (strlen(argv[1]) < 26)
+        { printf("Key must contain 26 characters.");
+        }
 
         printf("%i %s\n", argc, argv[1]);
     }
-    else //For null input
+    else // For null input
     {
         printf("Usage: ./substitution key");
     }
