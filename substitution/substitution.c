@@ -5,8 +5,9 @@
 
 int main(int argc, string argv[])
 {
-    if (argc == 2) // check if there is number or no
+    if (argc == 2 &) // check if there is number or no
     {
+
 
         printf("%i %s\n", argc, argv[1]);
     }
