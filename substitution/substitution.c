@@ -3,11 +3,12 @@
 #include <string.h>
 #include <ctype.h>
 #define isalphab(word) (isalpha(word)&&1)
-
+int check(string code, int count);
 char Sub[26] = "abcdefghijklmnopqrstuvwxyz";
 
 int main(int argc, string argv[])
 {
+    int x = check(argv[1], argc);
 }
 
 int check(string code, int count)
