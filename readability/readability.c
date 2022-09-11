@@ -38,7 +38,7 @@ int sent(string message) // sentence searcher
     int n = 0;
     for (int i = 0; i < strlen(message); i++)
     {
-        if (message[i]=='!' || message[i]=='.'|| message[i]==',')
+        if (message[i]=='!' || message[i]=='.')
         {
             n++;
         }
