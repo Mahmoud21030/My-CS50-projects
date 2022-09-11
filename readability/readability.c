@@ -2,13 +2,13 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
-#define isalphap(char c) (isalpha(c) && 1)
+#define isalphap(c) (isalpha(c) && 1)
 int letters(string message);
 
 int main(void)
 {
     string message = get_string("Text: "); // getting an input from user
-    printf("letters is %i",letters(string message));
+    printf("letters is %i\n",letters(message));
 }
 
 int letters(string message) // searching for letters in message
@@ -21,4 +21,5 @@ int letters(string message) // searching for letters in message
             n++;
         }
     }
+    return n;
 }
