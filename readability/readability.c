@@ -12,9 +12,9 @@ int main(void)
 {
     string message = get_string("Text: "); // getting an input from user
     int index=0;
-    int L=floor(letters(message)/word(message) * 100.0);
-
-    printf("letters is %i\n  sent is %i\n word is %i\n L=%i",letters(message),sent(message),word(message),L);
+    float l=(float)letters(message)/word(message) * 100.0;
+    float s=(float)sent(message)/word(message) * 100.0;
+    printf("letters is %i\n  sent is %i\n word is %i\n L=%0.2f \n S= %0.2f\n",letters(message),sent(message),word(message),l,s);
 }
 
 int letters(string message) // searching for letters in message
