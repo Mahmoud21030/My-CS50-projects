@@ -14,7 +14,10 @@ int main(void)
     int index=0;
     float l=(float)letters(message)/word(message) * 100.0;
     float s=(float)sent(message)/word(message) * 100.0;
-    printf("letters is %i\n  sent is %i\n word is %i\n L=%0.2f \n S= %0.2f\n",letters(message),sent(message),word(message),l,s);
+    index = 0.0588 * l - 0.296 * s - 15.8;
+    printf("Grade %i \n"
+    ,index);
+
 }
 
 int letters(string message) // searching for letters in message
