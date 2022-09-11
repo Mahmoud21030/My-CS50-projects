@@ -15,7 +15,7 @@ int main(void)
     float l=(float)letters(message)/word(message) * 100.0;
     float s=(float)sent(message)/word(message) * 100.0;
     index = 0.0588 * l - 0.296 * s - 15.8;
-    printf("Grade %i \n"
+    printf("Grade %i\n"
     ,index);
 
 }
