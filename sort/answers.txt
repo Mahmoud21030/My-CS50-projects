@@ -1,11 +1,18 @@
-sort1 uses: TODO
+sort1 uses: bubble sort
 
-How do you know?: TODO
+How do you know?
+Big o notation
+real    0m0.101s for random5000........  real    0m0.317s  for random10000 ....  real    0m7.878s for random50000
+real    0m0.109s for reversed5000......  real    0m0.264s  for reversed10000.... real    0m6.819s for reversed5000......
+omega
+real    0m0.056s for sorted5000........ real     0m0.169s   for sorted10000......real    0m1.164s for sorted50000........
+sort2 uses: merge sort
 
-sort2 uses: TODO
+How do you know?: merge sort
+real    0m0.042s for random5000........ real    0m0.083s  for random10000 .... real    0m0.767s for random50000
+real    0m0.063s for reversed5000...... real    0m0.067s  for reversed10000....real    0m1.673s for reversed5000......
+sort3 uses: selection sort
 
-How do you know?: TODO
-
-sort3 uses: TODO
-
-How do you know?: TODO
+How do you know?: selection sort
+real    0m0.052s  for random5000........
+real    0m0.062s  for reversed5000.....
