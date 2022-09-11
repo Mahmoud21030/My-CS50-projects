@@ -11,13 +11,12 @@ int word(string message);
 int main(void)
 {
     string message = get_string("Text: "); // getting an input from user
-    int Grade=0;
-    float l=(float)letters(message)/word(message) * 100.0;
-    float s=(float)sent(message)/word(message) * 100.0;
+    int Grade = 0;
+    float l = (float)letters(message) / word(message) * 100.0;
+    float s = (float)sent(message) / word(message) * 100.0;
     Grade = round(0.0588 * l - 0.296 * s - 15.8);
 
-    Grade>16?printf("Grade 16+\n"):(Grade>0? printf("Grade %i\n",Grade):printf("Before Grade 1\n"));
-
+    Grade > 16 ? printf("Grade 16+\n") : (Grade > 0 ? printf("Grade %i\n", Grade) : printf("Before Grade 1\n"));
 }
 
 int letters(string message) // searching for letters in message
@@ -38,7 +37,7 @@ int sent(string message) // sentence searcher
     int n = 0;
     for (int i = 0; i < strlen(message); i++)
     {
-        if (message[i]=='!' || message[i]=='.'|| message[i]=='?')
+        if (message[i] == '!' || message[i] == '.' || message[i] == '?')
         {
             n++;
         }
@@ -51,10 +50,10 @@ int word(string message) // for words searching for "spaces"
     int n = 0;
     for (int i = 0; i < strlen(message); i++)
     {
-        if (message[i]==' ')
+        if (message[i] == ' ')
         {
             n++;
         }
     }
-    return n+1;
+    return n + 1;
 }
