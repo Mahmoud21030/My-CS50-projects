@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
+#include <math.h>
 #define isalphap(c) (isalpha(c) && 1)
 int letters(string message);
 int sent(string message);
@@ -10,7 +11,10 @@ int word(string message);
 int main(void)
 {
     string message = get_string("Text: "); // getting an input from user
-    printf("letters is %i\n  sent is %i\n word is %i\n",letters(message),sent(message),word(message));
+    int index=0;
+    int L=floor(letters(message)/word(message) * 100.0);
+
+    printf("letters is %i\n  sent is %i\n word is %i\n L=%i",letters(message),sent(message),word(message),L);
 }
 
 int letters(string message) // searching for letters in message
