@@ -11,11 +11,12 @@ int word(string message);
 int main(void)
 {
     string message = get_string("Text: "); // getting an input from user
-    int index=0;
+    int Grade=0;
     float l=(float)letters(message)/word(message) * 100.0;
     float s=(float)sent(message)/word(message) * 100.0;
-    index = round(0.0588 * l - 0.296 * s - 15.8);
-    printf("Grade %i\n",index);
+    Grade = round(0.0588 * l - 0.296 * s - 15.8);
+
+    Grade>0? printf("Grade %i\n",Grade):Grade<1?printf("Before Grade 1\n"):printf("Grade 16+\n");
 
 }
 
