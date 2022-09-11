@@ -10,8 +10,7 @@ typedef struct
 {
     string name;
     int votes;
-}
-candidate;
+} candidate;
 
 // Array of candidates
 candidate candidates[MAX];
@@ -66,7 +65,12 @@ int main(int argc, string argv[])
 // Update vote totals given a new vote
 bool vote(string name)
 {
-    strcmp(name,)
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if(!strcmp(name, candidates[i].name)){
+            return true;
+        }
+    }
     return false;
 }
 
