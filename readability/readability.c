@@ -16,7 +16,7 @@ int main(void)
     float s=(float)sent(message)/word(message) * 100.0;
     Grade = round(0.0588 * l - 0.296 * s - 15.8);
 
-    Grade>0? printf("Grade %i\n",Grade):Grade<1?printf("Before Grade 1\n"):printf("Grade 16+\n");
+    Grade>0? printf("Grade %i\n",Grade):Grade>16?printf("Before Grade 1\n"):printf("Grade 16+\n");
 
 }
 
