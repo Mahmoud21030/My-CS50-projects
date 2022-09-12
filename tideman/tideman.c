@@ -1,8 +1,8 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
-#include <math.h>
-#define sqr(x)  (x)*(x)
+
+
 // Max number of candidates
 #define MAX 9
 
@@ -180,7 +180,7 @@ void sort_pairs(void)
 
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
-{   
+{
     for (int rows = 0; rows < pair_count; rows++)
     {
         for (int columns = 0; columns < pair_count; columns++)
