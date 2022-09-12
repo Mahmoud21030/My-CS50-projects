@@ -35,7 +35,7 @@ int max(float array[]);
 
 int main(int argc, string argv[])
 {
-    
+
     // Check for invalid usage
     if (argc < 2)
     {
@@ -63,7 +63,6 @@ int main(int argc, string argv[])
             locked[i][j] = false;
         }
     }
-
     pair_count = 0;
     int voter_count = get_int("Number of voters: ");
 
