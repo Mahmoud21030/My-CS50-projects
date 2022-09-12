@@ -110,7 +110,7 @@ void print_winner(void)
  //   printf("index is %i", max);
     for (int i = 0; i < candidate_count; i++)
     {
-        if(candidates[i].votes ==max){
+        if(candidates[i].votes >=max){
             printf("%s\n",candidates[i].name);
         }
     }
