@@ -169,15 +169,22 @@ void sort_pairs(void)
 
     for (int i = 0; i < pair_count; i++) // search for max
     {
-            temp[i] = pairs[max(array)];
-            printf("winner %i loser %i \n", temp[i].winner, temp[i].loser);
+        temp[i] = pairs[max(array)];
+        printf("winner %i loser %i \n", temp[i].winner, temp[i].loser);
     }
     return;
 }
 
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
-{   for(int i=0; i<)
+{
+    for (int rows = 0; rows < candidate_count; rows++)
+    {
+        for (int columns = 0; columns < candidate_count; columns++)
+        {
+            
+        }
+    }
 
     return;
 }
