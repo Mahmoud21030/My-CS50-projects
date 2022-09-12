@@ -15,8 +15,7 @@ typedef struct
 {
     int winner;
     int loser;
-}
-pair;
+} pair;
 
 // Array of candidates
 string candidates[MAX];
@@ -103,10 +102,10 @@ bool vote(int rank, string name, int ranks[])
     {
         if (!strcmp(name, candidates[i]))
         {
-            ranks[rank]=i;
+            ranks[rank] = i;
 
-            for(int loop = 0; loop < candidate_count; loop++)//debgug
-             printf("%d \n", ranks[loop]);
+            for (int loop = 0; loop < candidate_count; loop++) // debgug
+                printf("%d \n", ranks[loop]);
 
             return true;
         }
@@ -119,14 +118,14 @@ void record_preferences(int ranks[])
 {
     preferences[ranks[0]][ranks[1]]++;
     preferences[ranks[1]][ranks[2]]++;
-     for(int rows = 0; rows < candidate_count; rows++)
-  	{
-  		for(int columns = 0; columns < candidate_count; columns++)
-  		{
-  			printf("%d ", preferences[rows][columns]);
-		}
-   		printf("\n");
-  	}
+    for (int rows = 0; rows < candidate_count; rows++)
+    {
+        for (int columns = 0; columns < candidate_count; columns++)
+        {
+            printf("%d ", preferences[rows][columns]);
+        }
+        printf("\n");
+    }
 
     return;
 }
@@ -134,6 +133,17 @@ void record_preferences(int ranks[])
 // Record pairs of candidates where one is preferred over the other
 void add_pairs(void)
 {
+    for (int rows = 0; rows < candidate_count; rows++)
+    {
+        for (int columns = 0; columns < candidate_count; columns++)
+        {
+            if (rows != columns)
+            {
+                printf("%d ", preferences[rows][columns]);
+            }
+        }
+        printf("\n");
+    }
 
     return;
 }
