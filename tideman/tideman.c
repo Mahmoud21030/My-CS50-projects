@@ -191,7 +191,14 @@ void lock_pairs(void)
             locked[pairs[i].winner][pairs[i].loser]=true;
 
     }
-
+    for (int rows = 0; rows < candidate_count; rows++)
+    {
+        for (int columns = 0; columns < candidate_count; columns++)
+        {
+            printf("%i ", locked[rows][columns] );
+        }
+         printf("\n");
+    }
     return;
 }
 
