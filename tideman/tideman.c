@@ -170,7 +170,7 @@ void sort_pairs(void)
     for (int i = 0; i < pair_count; i++) // search for max
     {
             temp[i] = pairs[max(array)];
-            printf("winner %i loser %i \n", temp[counter].winner, temp[counter].winner);
+            printf("winner %i loser %i \n", temp[i].winner, temp[i].winner);
     }
     return;
 }
