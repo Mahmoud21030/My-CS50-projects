@@ -107,7 +107,7 @@ bool vote(int rank, string name, int ranks[])
             ranks[rank] = i;
 
             for (int loop = 0; loop < candidate_count; loop++) // debgug
-                printf("%d \n", ranks[loop]);
+               // printf("%d \n", ranks[loop]);
 
             return true;
         }
@@ -124,9 +124,9 @@ void record_preferences(int ranks[])
     {
         for (int columns = 0; columns < candidate_count; columns++)
         {
-            printf("%d ", preferences[rows][columns]);
+          //  printf("%d ", preferences[rows][columns]);
         }
-        printf("\n");
+      //  printf("\n");
     }
 
     return;
@@ -147,7 +147,7 @@ void add_pairs(void)
                     pairs[counter].winner = rows;
                     pairs[counter].loser = columns;
                     counter++;
-                    printf("counter is %i\n winner is %i\n loser is %i\n", counter, rows, columns);
+                  //  printf("counter is %i\n winner is %i\n loser is %i\n", counter, rows, columns);
                 }
             }
         }
@@ -166,12 +166,12 @@ void sort_pairs(void)
     {
         array[i] = preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[i].loser][pairs[i].winner];
     }
-    printf("percent is %0.2f\n", array[0]);
+   // printf("percent is %0.2f\n", array[0]);
 
     for (int i = 0; i < pair_count; i++) // search for max
     {
         temp[i] = pairs[max(array)];
-        printf("winner %i loser %i \n", temp[i].winner, temp[i].loser);
+       // printf("winner %i loser %i \n", temp[i].winner, temp[i].loser);
     }
     for (int i = 0; i < pair_count; i++) // search for max
     {
@@ -196,9 +196,9 @@ void lock_pairs(void)
     {
         for (int columns = 0; columns < candidate_count; columns++)
         {
-            printf("%i ", locked[rows][columns]);
+            //printf("%i ", locked[rows][columns]);
         }
-        printf("\n");
+       // printf("\n");
     }
     return;
 }
@@ -235,7 +235,7 @@ int max(float array[])
             index = i;
         }
     }
-    printf("%i", index);
+   // printf("%i", index);
     array[index] = 0;
     return index;
 }
