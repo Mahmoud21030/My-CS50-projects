@@ -158,8 +158,9 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {   float array[pair_count];
-    for(int i=0;i< pair_count;i++)
+    for(int i=0;i< pair_count;i++){
     array[i]=preferences[pairs[i].winner][pairs[i].loser]/preferences[pairs[i].loser][pairs[i].winner];
+    }
     printf("percent is %0.2f",array[0]);
     return;
 }
