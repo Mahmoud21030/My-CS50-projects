@@ -57,7 +57,7 @@ int main(int argc, string argv[])
             printf("Invalid vote.\n");
         }
     }
-     printf("vote.\n %i %i",candidates[0].votes,candidates[1].votes);
+    //printf("vote.\n %i %i", candidates[0].votes, candidates[1].votes);
     // Display winner of election
     print_winner();
 }
@@ -80,16 +80,29 @@ bool vote(string name)
 void print_winner(void)
 {
     int max = -1;
-    for (int i = 0; i < candidate_count ;i++)
+    for (int i = 0; i < candidate_count; i++)
     {
-        for (int j = 0; j < candidate_count - 1;j++)
+        for (int j = 0; j < candidate_count; j++)
         {
-            if (candidates[i].votes > candidates[j + 1].votes)
+            if (i != j)
             {
-                max = candidates[i].votes ;
+                if (candidates[i].votes >= candidates[j].votes)
+                {
+                    max = candidates[i].votes;
+                }
+                else
+                {
+                    max = candidates[j].votes;
+                }
             }
         }
     }
-    printf("index is %i", max);
+ //   printf("index is %i", max);
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if(candidates[i].votes ==max){
+            printf("%s\n",candidates[i].name);
+        }
+    }
     return;
 }
