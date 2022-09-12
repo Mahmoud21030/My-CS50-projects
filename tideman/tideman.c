@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
-#define sqr(x) (x)*(x)
+#define sqr(x) (x) * (x)
 // Max number of candidates
 #define MAX 9
 
@@ -123,7 +123,7 @@ void record_preferences(int ranks[])
     {
         for (int columns = 0; columns < candidate_count; columns++)
         {
-            if ( columns > rows)
+            if (columns > rows)
             {
                 preferences[ranks[rows]][ranks[columns]]++;
             }
@@ -172,8 +172,7 @@ void sort_pairs(void)
     int counter = 0;
     for (int i = 0; i < pair_count; i++)
     {
-        array[i] = sqrt( sqr(preferences[pairs[i].winner][pairs[i].loser])
-         - sqr(preferences[pairs[i].loser][pairs[i].winner]));
+        array[i] = sqrt(sqr(preferences[pairs[i].winner][pairs[i].loser]) - sqr(preferences[pairs[i].loser][pairs[i].winner]));
     }
     // printf("percent is %0.2f\n", array[0]);
 
@@ -199,13 +198,13 @@ void lock_pairs(void)
 
         locked[pairs[i].winner][pairs[i].loser] = true;
     }
-    for (int rows = 0; rows < candidate_count; rows++)
+   for (int rows = 0; rows < candidate_count; rows++)
     {
         for (int columns = 0; columns < candidate_count; columns++)
         {
-            // printf("%i ", locked[rows][columns]);
+            printf("%i ", locked[rows][columns]);
         }
-        // printf("\n");
+        printf("\n");
     }
     return;
 }
