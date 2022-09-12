@@ -106,6 +106,7 @@ bool vote(int rank, string name, int ranks[])
             ranks[rank]=i;
             for(int loop = 0; loop < candidate_count; loop++)
              printf("%d ", ranks[loop]);
+             record_preferences(ranks);
             return true;
         }
     }
