@@ -185,7 +185,7 @@ void lock_pairs(void)
     {
         for (int columns = 0; columns < pair_count; columns++)
         {
-
+            
         }
     }
 
