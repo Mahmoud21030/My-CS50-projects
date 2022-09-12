@@ -145,10 +145,11 @@ void add_pairs(void)
                     pairs[counter].winner=rows;
                     pairs[counter].loser=columns;
                     counter++;
+                    printf("counter is %i\n winner is %i\n loser is %i",counter,rows,columns);
                 }
             }
         }
-       
+
     }
 
     return;
