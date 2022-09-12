@@ -160,6 +160,7 @@ void sort_pairs(void)
     float array[pair_count];
     pair temp[pair_count];
     int counter =0;
+    int max=0;
     for (int i = 0; i < pair_count; i++)
     {
         array[i] = preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[i].loser][pairs[i].winner];
@@ -171,7 +172,7 @@ void sort_pairs(void)
         {
             max = array[i];
             array[i]=0;
-            
+            temp[counter]=pairs[i];
             }
     }
     return;
