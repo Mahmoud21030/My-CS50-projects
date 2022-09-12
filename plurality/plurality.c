@@ -1,6 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 // Max number of candidates
 #define MAX 9
@@ -42,7 +43,13 @@ int main(int argc, string argv[])
     {
         candidates[i].name = argv[i + 1];
         candidates[i].votes = 0;
+        for (int j = 0, n = strlen(candidates[i].name); j < n; j++) // to lowercase char
+        {
+           ( candidates[i].name )[j] = tolower((candidates[i].name) [j]);
+        }
+
     }
+
 
     int voter_count = get_int("Number of voters: ");
 
@@ -50,7 +57,10 @@ int main(int argc, string argv[])
     for (int i = 0; i < voter_count; i++)
     {
         string name = get_string("Vote: ");
-
+        for (int j = 0, n = strlen(name); j < n; j++) // to lowercase char
+        {
+           ( name)[j] = tolower((name) [j]);
+        }
         // Check for invalid vote
         if (!vote(name))
         {
