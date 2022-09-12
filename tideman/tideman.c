@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <string.h>
 
-
 // Max number of candidates
 #define MAX 9
 
@@ -165,8 +164,7 @@ void sort_pairs(void)
     int counter = 0;
     for (int i = 0; i < pair_count; i++)
     {
-        array[i] = preferences[pairs[i].winner][pairs[i].loser]
-        - preferences[pairs[i].loser][pairs[i].winner];
+        array[i] = preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[i].loser][pairs[i].winner];
     }
     printf("percent is %0.2f\n", array[0]);
 
@@ -177,27 +175,30 @@ void sort_pairs(void)
     }
     for (int i = 0; i < pair_count; i++) // search for max
     {
-     pairs[i] = temp[i];
+        pairs[i] = temp[i];
     }
     return;
 }
 
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
-{   if(pair_count==candidate_count*(candidate_count-1)/2){pair_count--;}
+{
+    if (pair_count == candidate_count * (candidate_count - 1) / 2)
+    {
+        pair_count--;
+    }
     for (int i = 0; i < pair_count; i++)
     {
 
-            locked[pairs[i].winner][pairs[i].loser]=true;
-
+        locked[pairs[i].winner][pairs[i].loser] = true;
     }
     for (int rows = 0; rows < candidate_count; rows++)
     {
         for (int columns = 0; columns < candidate_count; columns++)
         {
-            printf("%i ", locked[rows][columns] );
+            printf("%i ", locked[rows][columns]);
         }
-         printf("\n");
+        printf("\n");
     }
     return;
 }
@@ -205,7 +206,15 @@ void lock_pairs(void)
 // Print the winner of the election
 void print_winner(void)
 {
-    // TODO
+    int sum = 0;
+    for (int columns = 0; columns < candidate_count; columns++)
+    {
+        for (int rows = 0; rows < candidate_count; rows++)
+        {
+            sum += locked[rows][columns];
+        }
+        if(sum ==0){printf("")}
+    }
     return;
 }
 
