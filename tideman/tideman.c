@@ -122,7 +122,7 @@ void record_preferences(int ranks[])
     {
         for (int columns = 0; columns < candidate_count; columns++)
         {
-            if (rows != columns)
+            if ( columns > rows)
             {
                 preferences[ranks[rows]][ranks[columns]]++;
             }
