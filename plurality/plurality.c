@@ -84,8 +84,15 @@ void print_winner(void)
     {
         for (int j =0; j < candidate_count -1)
         {
-         if (candidates[i].votes > candidates[j].votes
+         if (candidates[i].votes >= candidates[i+1].votes)
+         { index=i;
+         }
+         else{
+            index=i+1
+
+         }
         }
     }
+    printf("index is %i",index);
     return;
 }
