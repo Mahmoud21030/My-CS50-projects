@@ -189,7 +189,7 @@ void lock_pairs(void)
     {
         for (int columns = 0; columns < pair_count; columns++)
         {
-            
+            locked[pairs[i].winner][pairs[i].loser]=true;
         }
     }
 
