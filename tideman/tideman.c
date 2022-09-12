@@ -35,6 +35,7 @@ int max(float array[]);
 
 int main(int argc, string argv[])
 {
+    
     // Check for invalid usage
     if (argc < 2)
     {
@@ -182,7 +183,7 @@ void lock_pairs(void)
     {
         for (int columns = 0; columns < candidate_count; columns++)
         {
-            
+
         }
     }
 
