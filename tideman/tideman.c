@@ -173,6 +173,7 @@ void sort_pairs(void)
             max = array[i];
             array[i]=0;
             temp[counter]=pairs[i];
+            printf("winner %i loser %i \n",temp[counter].winner ,temp[counter].winner);
             }
     }
     return;
