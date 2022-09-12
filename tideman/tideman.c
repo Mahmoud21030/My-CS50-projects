@@ -178,11 +178,11 @@ void sort_pairs(void)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
-    for (int rows = 0; rows < candidate_count; rows++)
+    for (int rows = 0; rows < pair_count; rows++)
     {
-        for (int columns = 0; columns < candidate_count; columns++)
+        for (int columns = 0; columns < pair_count; columns++)
         {
-
+            
         }
     }
 
