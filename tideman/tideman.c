@@ -216,7 +216,9 @@ void print_winner(void)
         if (sum == 0)
         {
             printf("%s", candidates[columns]);
+            return;
         }
+        sum=0;
     }
     return;
 }
