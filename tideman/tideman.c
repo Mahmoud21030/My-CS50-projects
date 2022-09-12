@@ -104,9 +104,10 @@ bool vote(int rank, string name, int ranks[])
         if (!strcmp(name, candidates[i]))
         {
             ranks[rank]=i;
+            record_preferences(ranks);
             for(int loop = 0; loop < candidate_count; loop++)//debgug
              printf("%d ", ranks[loop]);
-             record_preferences(ranks);
+
             return true;
         }
     }
@@ -122,11 +123,11 @@ void record_preferences(int ranks[])
   	{
   		for(int columns = 0; columns < candidate_count; columns++)
   		{
-  			printf("%d  ", preferences[rows][columns]);
+  			printf("%d ", preferences[rows][columns]);
 		}
    		printf("\n");
   	}
-             
+
     return;
 }
 
