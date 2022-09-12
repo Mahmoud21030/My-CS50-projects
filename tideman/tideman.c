@@ -159,7 +159,7 @@ void add_pairs(void)
 void sort_pairs(void)
 {   float array[pair_count];
     for(int i=0;i< pair_count;i++){
-    array[i]=preferences[pairs[i].winner][pairs[i].loser]/preferences[pairs[i].loser][pairs[i].winner];
+    array[i]=preferences[pairs[i].winner][pairs[i].loser]-preferences[pairs[i].loser][pairs[i].winner];
     }
     printf("percent is %0.2f",array[0]);
     return;
