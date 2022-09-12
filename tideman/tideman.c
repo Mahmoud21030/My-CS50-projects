@@ -31,7 +31,7 @@ void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
 void print_winner(void);
-int max(int array[]);
+int max(float array[]);
 
 int main(int argc, string argv[])
 {
@@ -189,7 +189,7 @@ void print_winner(void)
     return;
 }
 
-int max(int array[])
+int max(float array[])
 {
     int max = 0;
     int index = 0;
