@@ -142,26 +142,35 @@ void add_pairs(void)
             {
                 if (preferences[rows][columns] > preferences[columns][rows])
                 {
-                    pairs[counter].winner=rows;
-                    pairs[counter].loser=columns;
+                    pairs[counter].winner = rows;
+                    pairs[counter].loser = columns;
                     counter++;
-                    printf("counter is %i\n winner is %i\n loser is %i\n",counter,rows,columns);
+                    printf("counter is %i\n winner is %i\n loser is %i\n", counter, rows, columns);
                 }
             }
         }
-
     }
-    pair_count=counter;
+    pair_count = counter;
     return;
 }
 
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
-{   float array[pair_count];
-    for(int i=0;i< pair_count;i++){
-    array[i]=preferences[pairs[i].winner][pairs[i].loser]-preferences[pairs[i].loser][pairs[i].winner];
+{
+    float array[pair_count];
+    for (int i = 0; i < pair_count; i++)
+    {
+        array[i] = preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[i].loser][pairs[i].winner];
     }
-    printf("percent is %0.2f",array[0]);
+    printf("percent is %0.2f", array[0]);
+    for (int i = 0; i < pair_count; i++) //search for max
+    {
+        if (array[i] > max)
+        {
+            max = array[i];
+            array[i]=0;
+        }
+    }
     return;
 }
 
