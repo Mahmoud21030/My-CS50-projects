@@ -106,7 +106,7 @@ bool vote(int rank, string name, int ranks[])
             ranks[rank]=i;
 
             for(int loop = 0; loop < candidate_count; loop++)//debgug
-             printf("%d  ", ranks[loop]);
+             printf("%d \n", ranks[loop]);
 
             return true;
         }
