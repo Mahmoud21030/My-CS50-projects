@@ -175,6 +175,10 @@ void sort_pairs(void)
         temp[i] = pairs[max(array)];
         // printf("winner %i loser %i \n", temp[i].winner, temp[i].loser);
     }
+    if (pair_count == candidate_count * (candidate_count - 1) / 2)
+    {
+        pair_count--;
+    }
     for (int i = 0; i < pair_count; i++) // search for max
     {
         pairs[i] = temp[i];
@@ -185,10 +189,7 @@ void sort_pairs(void)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
-    if (pair_count == candidate_count * (candidate_count - 1) / 2)
-    {
-        pair_count--;
-    }
+
     for (int i = 0; i < pair_count; i++)
     {
 
