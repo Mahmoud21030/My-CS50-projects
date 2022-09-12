@@ -109,7 +109,6 @@ bool vote(int rank, string name, int ranks[])
 
             for (int loop = 0; loop < candidate_count; loop++) // debgug
                                                                // printf("%d \n", ranks[loop]);
-
                 return true;
         }
     }
@@ -198,7 +197,7 @@ void lock_pairs(void)
 
         locked[pairs[i].winner][pairs[i].loser] = true;
     }
-   for (int rows = 0; rows < candidate_count; rows++)
+    for (int rows = 0; rows < candidate_count; rows++)
     {
         for (int columns = 0; columns < candidate_count; columns++)
         {
