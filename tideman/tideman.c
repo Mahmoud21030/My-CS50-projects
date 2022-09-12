@@ -31,6 +31,7 @@ void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
 void print_winner(void);
+int max(int array[]);
 
 int main(int argc, string argv[])
 {
@@ -159,23 +160,17 @@ void sort_pairs(void)
 {
     float array[pair_count];
     pair temp[pair_count];
-    int counter =0;
-    int max=0;
+    int counter = 0;
     for (int i = 0; i < pair_count; i++)
     {
         array[i] = preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[i].loser][pairs[i].winner];
     }
     printf("percent is %0.2f\n", array[0]);
 
-    for (int i = 0; i < pair_count; i++) //search for max
+    for (int i = 0; i < pair_count; i++) // search for max
     {
-        if (array[i] > max)
-        {
-            max = array[i];
-            array[i]=0;
-            temp[counter]=pairs[i];
-            printf("winner %i loser %i \n",temp[counter].winner ,temp[counter].winner);
-            }
+            temp[i] = pairs[max(array)];
+            printf("winner %i loser %i \n", temp[counter].winner, temp[counter].winner);
     }
     return;
 }
@@ -194,9 +189,19 @@ void print_winner(void)
     return;
 }
 
-int max(int array[]){
-for (int i = 0; i < pair_count; i++){
-
-
-
+int max(int array[])
+{
+    int max = 0;
+    int index = 0;
+    for (int i = 0; i < pair_count; i++)
+    {
+        if (array[i] > max)
+        {
+            max = array[i];
+            index = i;
+        }
+    }
+    printf("%i", index);
+    array[index] = 0;
+    return index;
 }
