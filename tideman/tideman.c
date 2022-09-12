@@ -213,7 +213,10 @@ void print_winner(void)
         {
             sum += locked[rows][columns];
         }
-        if(sum ==0){printf("")}
+        if (sum == 0)
+        {
+            printf("%s", candidates[columns]);
+        }
     }
     return;
 }
