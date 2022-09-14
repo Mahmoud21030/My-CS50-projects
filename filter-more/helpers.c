@@ -90,6 +90,14 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             else if (column != rows && column == 0  )
             {
             }
+            else if (column != rows && column == 0  )
+            {
+            }
+            else if (column != rows && column == 0  )
+            {
+            else if (column != rows && column == 0  )
+            {
+            }
         }
     }
     return;
