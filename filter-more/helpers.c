@@ -55,10 +55,21 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int column = 0; column < width; column++)
         {
-            if(column)
+            if (column > 0 && rows > 0 && column < (width - 1) && rows < (height))
+            {
+                image[rows][column].rgbtBlue = copy[rows-1][column-1].rgbtBlue+copy[rows+1][column+1].rgbtBlue+
+                copy[rows][column-1].rgbtBlue+copy[rows-1][column].rgbtBlue+copy[rows][column+1].rgbtBlue
+                +copy[rows+1][column].rgbtBlue+copy[rows-1][column+1].rgbtBlue+copy[rows+1][column-1].rgbtBlue;
+
+                image[rows][column].rgbtRed = copy[rows-1][column-1].rgbtBlue+copy[rows+1][column+1].rgbtBlue+
+                copy[rows][column-1].rgbtBlue+copy[rows-1][column].rgbtBlue+copy[rows][column+1].rgbtBlue
+                +copy[rows+1][column].rgbtBluecopy[rows-1][column+1].rgbtBlue+copy[rows+1][column-1].rgbtBlue;
+
+                image[rows][column].rgbtGreen = temp;
+            }
         }
     }
-return;
+    return;
 }
 
 // Detect edges
