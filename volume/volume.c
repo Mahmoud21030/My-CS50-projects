@@ -10,6 +10,8 @@ const int HEADER_SIZE = 44;
 int main(int argc, char *argv[])
 {
     // Check command-line arguments
+    uint8_t array[44];
+    int16_t buffer = 1;
     if (argc != 4)
     {
         printf("Usage: ./volume input.wav output.wav factor\n");
@@ -24,7 +26,7 @@ int main(int argc, char *argv[])
         return 1;
     }
 
- /*   FILE *output = fopen(argv[2], "w");
+    FILE *output = fopen(argv[2], "w");
     if (output == NULL)
     {
         printf("Could not open file.\n");
@@ -33,11 +35,19 @@ int main(int argc, char *argv[])
 
     float factor = atof(argv[3]);
 
-    // TODO: Copy header from input file to output file
+    fread(array, 44, 1, input);
+    fwrite(array, 44, 1, output);
+    // printf("%s", array);
 
-    // TODO: Read samples from input file and write updated data to output file
+    while (fread(&buffer, sizeof(buffer), 1, input))
+    {
+
+        buffer *= factor;
+        // printf("%i",buffer);
+        fwrite(&buffer, sizeof(buffer), 1, output);
+    }
 
     // Close files
     fclose(input);
-  //  fclose(output);*/
+    fclose(output);
 }
