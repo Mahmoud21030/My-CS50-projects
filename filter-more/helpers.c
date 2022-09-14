@@ -13,11 +13,11 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
         {
             temp = (image[rows][column].rgbtBlue +
                     image[rows][column].rgbtRed +
-                    image[rows][column].rgbtGreen)/3 ;
-            image[rows][column].rgbtBlue=temp;
-            image[rows][column].rgbtRed=temp;
-            image[rows][column].rgbtGreen=temp;
-
+                    image[rows][column].rgbtGreen) /
+                   3;
+            image[rows][column].rgbtBlue = temp;
+            image[rows][column].rgbtRed = temp;
+            image[rows][column].rgbtGreen = temp;
         }
     }
     return;
@@ -29,13 +29,12 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     RGBTRIPLE temp;
     for (int rows = 0; rows < height; rows++)
     {
-        for (int column = 0; column < floor((width-1)/2); column++)
+        for (int column = 0; column < floor((width - 1) / 2); column++)
         {
-            temp=image[rows][column];
-            image[rows][column]=image[rows][width-column-1];
-            image[rows][width-column-1]=temp;
+            temp = image[rows][column];
+            image[rows][column] = image[rows][width - column - 1];
+            image[rows][width - column - 1] = temp;
         }
-
     }
     return;
 }
@@ -44,7 +43,15 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
     RGBTRIPLE copy[height][width];
-    
+    for (int x = 0; x < height; x++)
+    {
+        for (int y = 0; y < width; y++)
+        {
+            copy[x][y] = image[x][y];
+        }
+    }
+
+
     return;
 }
 
