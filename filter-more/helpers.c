@@ -1,4 +1,5 @@
 #include "helpers.h"
+#include <math.h>
 // BYTE  rgbtBlue;
 //  BYTE  rgbtGreen;
 //  BYTE  rgbtRed;
@@ -27,7 +28,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     RGBTRIPLE temp;
     for (int rows = 0; rows < height; rows++)
     {
-        for (int column = 0; column < width; column++)
+        for (int column = 0; column < floor((width-1)/2); column++)
         {
             temp=image[rows][column];
             image[rows][column]=image[rows][width-column-1];
