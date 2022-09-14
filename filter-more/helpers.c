@@ -17,6 +17,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
             image[rows][column].rgbtBlue=temp;
             image[rows][column].rgbtRed=temp;
             image[rows][column].rgbtGreen=temp;
+
         }
     }
     return;
