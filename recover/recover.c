@@ -1,10 +1,11 @@
 #include <stdio.h>
+#include <stdint.h>
 #include <stdlib.h>
-
+typedef uint16_t Byte;
 int check(char array[]);
 
 int main(int argc, char *argv[])
-{   char array[512];
+{   Byte array[512];
     if (argc != 2)
     {
         printf("Usage: ./recover IMAGE");
