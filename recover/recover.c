@@ -17,12 +17,12 @@ int main(int argc, char *argv[])
 
     FILE *input = fopen(argv[1], "r");
     FILE *output = fopen("First", "write");
-    while (fread(array, 512, 1, in))
+    while (fread(array, 512, 1, input))
     {
         if (check(array))
         {
             fclose(output);
-            
+
         }
     }
 }
