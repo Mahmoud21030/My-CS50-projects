@@ -61,7 +61,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                                                 copy[rows + 1][column + 1].rgbtBlue +
                                                 copy[rows][column - 1].rgbtBlue +
                                                 copy[rows - 1][column].rgbtBlue +
-                                                copy[rows][column + 1].rgbtBlue + copy[rows + 1][column].rgbtBlue +
+                                                copy[rows][column + 1].rgbtBlue +
+                                                copy[rows + 1][column].rgbtBlue +
                                                 copy[rows - 1][column + 1].rgbtBlue +
                                                 copy[rows + 1][column - 1].rgbtBlue) /
                                                8;
@@ -70,7 +71,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                                                copy[rows + 1][column + 1].rgbtRed +
                                                copy[rows][column - 1].rgbtRed +
                                                copy[rows - 1][column].rgbtRed +
-                                               copy[rows][column + 1].rgbtRed + copy[rows + 1][column].rgbtRed +
+                                               copy[rows][column + 1].rgbtRed +
+                                               copy[rows + 1][column].rgbtRed +
                                                copy[rows - 1][column + 1].rgbtRed +
                                                copy[rows + 1][column - 1].rgbtRed) /
                                               8;
@@ -79,7 +81,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                                                  copy[rows + 1][column + 1].rgbtGreen +
                                                  copy[rows][column - 1].rgbtGreen +
                                                  copy[rows - 1][column].rgbtGreen +
-                                                 copy[rows][column + 1].rgbtGreen + copy[rows + 1][column].rgbtGreen +
+                                                 copy[rows][column + 1].rgbtGreen +
+                                                 copy[rows + 1][column].rgbtGreen +
                                                  copy[rows - 1][column + 1].rgbtGreen +
                                                  copy[rows + 1][column - 1].rgbtGreen) /
                                                 8;
