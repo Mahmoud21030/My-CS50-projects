@@ -18,7 +18,11 @@ int main(int argc, char *argv[])
 
     FILE *input = fopen(argv[1], "r");
     FILE *output = fopen("First", "w");
+
     while (fread(block, 512, 1, input))
+    if (check(block)){break;}
+
+   do
     {
         if (check(block))
         {
@@ -28,8 +32,9 @@ int main(int argc, char *argv[])
             output = fopen(filen, "w");
             fwrite(block,512,1,output);
         }
-        else if()
+        else { fwrite(block,512,1,output);}
     }
+    while (fread(block, 512, 1, input));
 }
 
 int check(Byte block[])
