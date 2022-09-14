@@ -40,6 +40,8 @@ int main(int argc, char *argv[])
             fwrite(block, 512, 1, output);
         }
     } while (fread(block, 512, 1, input));
+    fclose(output);
+    fclose(input);
 }
 
 int check(Byte block[])
