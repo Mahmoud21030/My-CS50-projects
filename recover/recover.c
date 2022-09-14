@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
-typedef uint16_t Byte;
+typedef int16_t Byte;
 int check(char array[]);
 
 int main(int argc, char *argv[])
@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 
 int check(char array[])
 {
-    if(array[0]==0xff && array[1]==0xd8 && array[2]==0xff && (array[3] & 0xf0)==0xe0)
+    if(array[0]==0xff && array[1]==0xd8 && array[2]== 0xff && (array[3] & 0xf0)==0xe0)
     return 1;
     return 0;
 }
