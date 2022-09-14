@@ -28,6 +28,7 @@ int main(int argc, char *argv[])
             output = fopen(filen, "w");
             fwrite(block,512,1,output);
         }
+        else if()
     }
 }
 
