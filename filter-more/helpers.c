@@ -55,35 +55,37 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int column = 0; column < width; column++)
         {
-            if (column > 0 && rows > 0 && column < (width - 1) && rows < (height)) //first type-1 all sides
+            if (column > 0 && rows > 0 && column < (width - 1) && rows < (height)) // first type-1 all sides
             {
-                image[rows][column].rgbtBlue = (copy[rows-1][column-1].rgbtBlue+
-                copy[rows+1][column+1].rgbtBlue+
-                copy[rows][column-1].rgbtBlue+
-                copy[rows-1][column].rgbtBlue+
-                copy[rows][column+1].rgbtBlue
-                +copy[rows+1][column].rgbtBlue+
-                copy[rows-1][column+1].rgbtBlue+
-                copy[rows+1][column-1].rgbtBlue)/8;
+                image[rows][column].rgbtBlue = (copy[rows - 1][column - 1].rgbtBlue +
+                                                copy[rows + 1][column + 1].rgbtBlue +
+                                                copy[rows][column - 1].rgbtBlue +
+                                                copy[rows - 1][column].rgbtBlue +
+                                                copy[rows][column + 1].rgbtBlue + copy[rows + 1][column].rgbtBlue +
+                                                copy[rows - 1][column + 1].rgbtBlue +
+                                                copy[rows + 1][column - 1].rgbtBlue) /
+                                               8;
 
-                image[rows][column].rgbtRed = (copy[rows-1][column-1].rgbtRed+
-                copy[rows+1][column+1].rgbtRed+
-                copy[rows][column-1].rgbtRed+
-                copy[rows-1][column].rgbtRed+
-                copy[rows][column+1].rgbtRed
-                +copy[rows+1][column].rgbtRed+
-                copy[rows-1][column+1].rgbtRed+
-                copy[rows+1][column-1].rgbtRed)/8;
+                image[rows][column].rgbtRed = (copy[rows - 1][column - 1].rgbtRed +
+                                               copy[rows + 1][column + 1].rgbtRed +
+                                               copy[rows][column - 1].rgbtRed +
+                                               copy[rows - 1][column].rgbtRed +
+                                               copy[rows][column + 1].rgbtRed + copy[rows + 1][column].rgbtRed +
+                                               copy[rows - 1][column + 1].rgbtRed +
+                                               copy[rows + 1][column - 1].rgbtRed) /
+                                              8;
 
-                image[rows][column].rgbtGreen =( copy[rows-1][column-1].rgbtGreen+
-                copy[rows+1][column+1].rgbtGreen+
-                copy[rows][column-1].rgbtGreen+
-                copy[rows-1][column].rgbtGreen+
-                copy[rows][column+1].rgbtGreen
-                +copy[rows+1][column].rgbtGreen+copy[rows-1][column+1].rgbtGreen+copy[rows+1][column-1].rgbtGreen)/8;
+                image[rows][column].rgbtGreen = (copy[rows - 1][column - 1].rgbtGreen +
+                                                 copy[rows + 1][column + 1].rgbtGreen +
+                                                 copy[rows][column - 1].rgbtGreen +
+                                                 copy[rows - 1][column].rgbtGreen +
+                                                 copy[rows][column + 1].rgbtGreen + copy[rows + 1][column].rgbtGreen +
+                                                 copy[rows - 1][column + 1].rgbtGreen +
+                                                 copy[rows + 1][column - 1].rgbtGreen) /
+                                                8;
             }
-            else if(column != rows && (column==0 ||column==(width-1)) &&(rows==0 ||rows==(height-1))) {
-
+            else if (column != rows && (column == 0 || column == (width - 1)) && (rows == 0 || rows == (height - 1)))
+            {
             }
         }
     }
