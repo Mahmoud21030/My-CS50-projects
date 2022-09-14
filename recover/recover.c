@@ -4,7 +4,7 @@
 int check(char array[]);
 
 int main(int argc, char *argv[])
-{
+{   char array[512];
     if (argc != 2)
     {
         printf("Usage: ./recover IMAGE");
@@ -21,4 +21,7 @@ int main(int argc, char *argv[])
 
 int check(char array[])
 {
+    if(array[0]==0xff && array[1]==0xd8 && array[2]==0xff && (array[3] & 0xf0)==0xe0)
+    return 1;
+    return 0;
 }
