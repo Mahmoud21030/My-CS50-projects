@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
-typedef int16_t Byte;
-int check(char array[]);
+typedef uint8_t Byte;
+
+int check(Byte array[]);
 
 int main(int argc, char *argv[])
 {   Byte array[512];
@@ -20,7 +21,7 @@ int main(int argc, char *argv[])
     }
 }
 
-int check(char array[])
+int check(Byte array[])
 {
     if(array[0]==0xff && array[1]==0xd8 && array[2]== 0xff && (array[3] & 0xf0)==0xe0)
     return 1;
