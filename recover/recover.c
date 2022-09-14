@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int check(char array[]);
+
 int main(int argc, char *argv[])
 {
     if (argc != 2)
@@ -13,6 +15,10 @@ int main(int argc, char *argv[])
 
     while (feof(input) == 0)
     {
-        
+        if (check)
     }
+}
+
+int check(char array[])
+{
 }
