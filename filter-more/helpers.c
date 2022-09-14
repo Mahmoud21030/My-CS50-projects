@@ -87,7 +87,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                                                  copy[rows + 1][column - 1].rgbtGreen) /
                                                 8;
             }
-            else if (column != rows && column == 0  )
+            else if ((rows != 0 && rows != 0) && column == 0  )
             {
             }
             else if (column != rows && column == 0  )
