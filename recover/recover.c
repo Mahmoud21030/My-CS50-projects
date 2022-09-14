@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
         if (check(block))
         {
             fclose(output);
-            sprintf(filen, "%i03.jpg", counter);
+            sprintf(filen, "%03i.jpg", counter);
             counter++;
             output = fopen(filen, "w");
             fwrite(block, 512, 1, output);
