@@ -20,9 +20,12 @@ int main(int argc, char *argv[])
     FILE *output = fopen("First", "w");
 
     while (fread(block, 512, 1, input))
-    if (check(block)){break;}
+        if (check(block))
+        {
+            break;
+        }
 
-   do
+    do
     {
         if (check(block))
         {
@@ -30,11 +33,13 @@ int main(int argc, char *argv[])
             sprintf(filen, "%i03.jpg", counter);
             counter++;
             output = fopen(filen, "w");
-            fwrite(block,512,1,output);
+            fwrite(block, 512, 1, output);
         }
-        else { fwrite(block,512,1,output);}
-    }
-    while (fread(block, 512, 1, input));
+        else
+        {
+            fwrite(block, 512, 1, output);
+        }
+    } while (fread(block, 512, 1, input));
 }
 
 int check(Byte block[])
