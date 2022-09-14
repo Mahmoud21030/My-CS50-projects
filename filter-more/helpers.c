@@ -103,9 +103,10 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                                             copy[rows - 1][column-1].rgbtBlue+ //above side
                                             copy[rows +1][column-1].rgbtBlue+ //down side
             }
-            }
+
             else if ((column != 0 && column != (width-1)) && rows == 0  )
             {
+            }
             else if ((column != 0 && column != (width-1)) && rows == (height-1)  )
             {
             }
