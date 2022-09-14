@@ -14,10 +14,12 @@ int main(int argc, char *argv[])
     }
 
     FILE *input = fopen(argv[1], "r");
-
-    while (feof(input) == 0)
+    FILE *output;
+    while (fread(array,512,1,input))
     {
-      if (check(array))
+      fclose(output);
+
+
     }
 }
 
