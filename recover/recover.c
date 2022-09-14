@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 
     do
     {
-        if (check(block))
+        if (check(block)) //routine of new img
         {
             fclose(output);
             sprintf(filen, "%03i.jpg", counter);
@@ -35,18 +35,21 @@ int main(int argc, char *argv[])
             output = fopen(filen, "w");
             fwrite(block, 512, 1, output);
         }
-        else
+        else //same img
         {
             fwrite(block, 512, 1, output);
         }
-    } while (fread(block, 512, 1, input));
+    }
+    while (fread(block, 512, 1, input));
     fclose(output);
     fclose(input);
 }
 
-int check(Byte block[])
+int check(Byte block[]) //return 1 if new img
 {
     if (block[0] == 0xff && block[1] == 0xd8 && block[2] == 0xff && (block[3] & 0xf0) == 0xe0)
+    {
         return 1;
+    }
     return 0;
 }
