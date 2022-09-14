@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 
     while (feof(input) == 0)
     {
-        if (check(array))
+      //  if (check(array))
     }
 }
 
