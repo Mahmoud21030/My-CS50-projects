@@ -277,7 +277,11 @@ for (int rows = 0; rows < height; rows++)
     {
         for (int columns = 0; column < width; column++)
         {
-            for()
+            for(int r= (rows-1); r<(rows+1);r++)
+            {
+               for(int r= (rows-1); r<(rows+1);r++)
+            }
+
         }
     }
 
