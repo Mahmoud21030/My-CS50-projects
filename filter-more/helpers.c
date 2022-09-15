@@ -1,11 +1,11 @@
 #include "helpers.h"
 #include <math.h>
-define sqr(x) (x)*(x)
-// BYTE  rgbtBlue;
-//  BYTE  rgbtGreen;
-//  BYTE  rgbtRed;
-// Convert image to grayscale
-void grayscale(int height, int width, RGBTRIPLE image[height][width])
+define sqr(x)(x) * (x)
+    // BYTE  rgbtBlue;
+    //  BYTE  rgbtGreen;
+    //  BYTE  rgbtRed;
+    // Convert image to grayscale
+    void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
     int temp = 0;
     for (int rows = 0; rows < height; rows++)
@@ -290,12 +290,12 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
-int gx_s_rgbtRed=0;
-int gx_s_rgbtBlue=0;
-int gx_s_rgbtGreen=0;
-int gy_s_rgbtRed=0;
-int gy_s_rgbtBlue=0;
-int gy_s_rgbtGreen=0;
+    int gx_s_rgbtRed = 0;
+    int gx_s_rgbtBlue = 0;
+    int gx_s_rgbtGreen = 0;
+    int gy_s_rgbtRed = 0;
+    int gy_s_rgbtBlue = 0;
+    int gy_s_rgbtGreen = 0;
 
     RGBTRIPLE copy[height][width];
     for (int x = 0; x < height; x++)
@@ -320,24 +320,42 @@ int gy_s_rgbtGreen=0;
             for (int r = (rows - 1); r < (rows + 1); r++)
             {
                 for (int c = (columns - 1); c < (columns + 1); c++)
-                {   if(r>=0 && r<height && c>=0 && c<width)
-                    // getting gx*pixel
+                {
+                    if (r >= 0 && r < height && c >= 0 && c < width)
+                        // getting gx*pixel
 
-                    gx_s_rgbtRed += gx[r][c] * copy[rows][columns]_rgbtRed;
-                    gx_s_rgbtGreen += gx[r][c] * copy[rows][columns]_rgbtGreen;
-                    gx_s_rgbtBlue += gx[r][c] * copy[rows][columns]_rgbtBlue;
+                        gx_s_rgbtRed += gx[r][c] * copy[rows][columns] _rgbtRed;
+                    gx_s_rgbtGreen += gx[r][c] * copy[rows][columns] _rgbtGreen;
+                    gx_s_rgbtBlue += gx[r][c] * copy[rows][columns] _rgbtBlue;
                     // getting gy*pixel
-                    gy_s_rgbtRed += gy[r][c] * copy[rows][columns]_rgbtRed;
-                    gy_s_rgbtGreen += gy[r][c] * copy[rows][columns]_rgbtGreen;
-                    gy_s_rgbtBlue += gy[r][c] * copy[rows][columns]_rgbtBlue;
-                    if(gx_s_rgbtRed>255){gx_s_rgbtRed=255;}
-                    if(gx_s_rgbtGreen>255){gx_s_rgbtRed=255;}
-                    if(gx_s_rgbtRed>255){gx_s_rgbtRed=255;}
+                    gy_s_rgbtRed += gy[r][c] * copy[rows][columns] _rgbtRed;
+                    gy_s_rgbtGreen += gy[r][c] * copy[rows][columns] _rgbtGreen;
+                    gy_s_rgbtBlue += gy[r][c] * copy[rows][columns] _rgbtBlue;
 
-                    image[rows][columns] = sqrt(sqr(gx_s_rgbtGreen)+sqr(gy_s_rgbtGreen));
-                    image[rows][columns] = sqrt(sqr(gx_s_rgbtRed)+sqr(gy_s_rgbtRed));
-                    image[rows][columns] = sqrt(sqr(gx_s_rgbtBlue)+sqr(gy_s_rgbtBlue));
-
+                    if (sqrt(sqr(gx_s_rgbtGreen) + sqr(gy_s_rgbtGreen)) > 255)
+                    {
+                        image[rows][columns] = 255;
+                    }
+                    else
+                    {
+                        image[rows][columns] = sqrt(sqr(gx_s_rgbtGreen) + sqr(gy_s_rgbtGreen));
+                    }
+                    if (sqrt(sqr(gx_s_rgbtRed) + sqr(gy_s_rgbtRed)))
+                    {
+                        image[rows][columns] = 255;
+                    }
+                    else
+                    {
+                        image[rows][columns] = sqrt(sqr(gx_s_rgbtRed) + sqr(gy_s_rgbtRed));
+                    }
+                    if (sqrt(sqr(gx_s_rgbtBlue) + sqr(gy_s_rgbtBlue)) > 255)
+                    {
+                        image[rows][columns] = 255;
+                    }
+                    else
+                    {
+                        image[rows][columns] = sqrt(sqr(gx_s_rgbtBlue) + sqr(gy_s_rgbtBlue));
+                    }
                 }
             }
         }
