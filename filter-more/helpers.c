@@ -363,7 +363,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 else
                 {
                     image[rows][columns].rgbtRed = round(sqrt(sqr(gx_s.rgbtRed) + sqr(gy_s.rgbtRed)));
-                }*/
+                }
 
                 if (round(sqrt(sqr(gx_s.rgbtBlue) + sqr(gy_s.rgbtBlue) )) > 255)
                 {
@@ -372,7 +372,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 else
                 {
                     image[rows][columns].rgbtBlue = round(sqrt(sqr(gx_s.rgbtBlue) + sqr(gy_s.rgbtBlue)));
-                }
+                }*/
             }
             gx_s.rgbtRed = 0;
             gx_s.rgbtGreen = 0;
