@@ -289,11 +289,18 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
-    RGBTRIPLE temp;
 
+    RGBTRIPLE copy[height][width];
+    for (int x = 0; x < height; x++)
+    {
+        for (int y = 0; y < width; y++)
+        {
+            copy[x][y] = image[x][y];
+        }
+    }
     int gx[3][3] = {{-1, 0, 1},
-                        {-2, 0, 2},
-                        {-1, 0, 1}};
+                    {-2, 0, 2},
+                    {-1, 0, 1}};
 
     int gy[3][3] = {{-1, -2, -1},
                     {0, 0, 0},
@@ -306,8 +313,16 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             for (int r = (rows - 1); r < (rows + 1); r++)
             {
                 for (int c = (columns - 1); c < (columns + 1); c++)
-                {
-                    
+                { // getting gx*pixel
+                    image[rows][columns].rgbtRed = gx[r][c] * copy[rows][columns].rgbtRed;
+                    image[rows][columns].rgbtGreen = gx[r][c] * copy[rows][columns].rgbtGreen;
+                    image[rows][columns].rgbtBlue = gx[r][c] * copy[rows][columns].rgbtBlue;
+                 // getting gy*pixel
+                    image[rows][columns].rgbtRed = gy[r][c] * copy[rows][columns].rgbtRed;
+                    image[rows][columns].rgbtGreen = gy[r][c] * copy[rows][columns].rgbtGreen;
+                    image[rows][columns].rgbtBlue = gy[r][c] * copy[rows][columns].rgbtBlue;
+
+
                 }
             }
         }
