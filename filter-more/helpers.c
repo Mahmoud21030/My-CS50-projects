@@ -318,6 +318,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 for (int c = (columns - 1); c < (columns + 1); c++)
                 {   if(r>=0 && r<height && c>=0 && c<width)
                     // getting gx*pixel
+
                     gx_s.rgbtRed += gx[r][c] * copy[rows][columns].rgbtRed;
                     gx_s.rgbtGreen += gx[r][c] * copy[rows][columns].rgbtGreen;
                     gx_s.rgbtBlue += gx[r][c] * copy[rows][columns].rgbtBlue;
@@ -325,7 +326,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     gy_s.rgbtRed += gy[r][c] * copy[rows][columns].rgbtRed;
                     gy_s.rgbtGreen += gy[r][c] * copy[rows][columns].rgbtGreen;
                     gy_s.rgbtBlue += gy[r][c] * copy[rows][columns].rgbtBlue;
-                    if()
+
                     image[rows][columns] = sqrt(sqr(gx_s.rgbtGreen)+sqr(gy_s.rgbtGreen));
                     image[rows][columns] = sqrt(sqr(gx_s.rgbtRed)+sqr(gy_s.rgbtRed));
                     image[rows][columns] = sqrt(sqr(gx_s.rgbtBlue)+sqr(gy_s.rgbtBlue));
