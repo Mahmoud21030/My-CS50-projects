@@ -296,8 +296,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     int gy_s_rgbtRed = 0;
     int gy_s_rgbtBlue = 0;
     int gy_s_rgbtGreen = 0;*/
-    RGBTRIPLE gx_s;
-    RGBTRIPLE gy_s;
+    RGBint gx_s;
+    RGBint gy_s;
 
     RGBTRIPLE copy[height][width];
     for (int x = 0; x < height; x++)
