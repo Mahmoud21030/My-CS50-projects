@@ -3,9 +3,9 @@
 #define sqr(x) (x) * (x)
 typedef struct
 {
-   unsigned int rgbtBlue;
-   unsigned  int rgbtGreen;
-   unsigned int rgbtRed;
+    int rgbtBlue;
+    int rgbtGreen;
+    int rgbtRed;
 } RGBint;
 // BYTE  rgbtBlue;
 //  BYTE  rgbtGreen;
@@ -347,31 +347,36 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 }
 
                 x++;
-                if (round(sqrt(sqr(gx_s.rgbtGreen) + sqr(gy_s.rgbtGreen))) > 0xff)
+                int x1=round(sqrt(sqr(gx_s.rgbtGreen) + sqr(gy_s.rgbtGreen)));
+                BYTE Green=x1;
+                if ( x>255)
                 {
                     image[rows][columns].rgbtGreen = 0xff;
                 }
                 else
                 {
-                    image[rows][columns].rgbtGreen = round(sqrt(sqr(gx_s.rgbtGreen) + sqr(gy_s.rgbtGreen)));
+                    image[rows][columns].rgbtGreen = x1;
                 }
-
-               if ((BYTE)round(sqrt(sqr(gx_s.rgbtRed) + sqr(gy_s.rgbtRed))) > 0xff)
+                int x2=round(sqrt(sqr(gx_s.rgbtRed) + sqr(gy_s.rgbtRed)));
+                BYTE Red=x2;
+               if (x2>255)
                 {
                     image[rows][columns].rgbtRed = 0xff;
                 }
                 else
                 {
-                    image[rows][columns].rgbtRed = round(sqrt(sqr(gx_s.rgbtRed) + sqr(gy_s.rgbtRed)));
+                    image[rows][columns].rgbtRed = Red;
                 }
 
-                if (round(sqrt(sqr(gx_s.rgbtBlue) + sqr(gy_s.rgbtBlue) )) > 0xff)
+                int x3=round(sqrt(sqr(gx_s.rgbtBlue) + sqr(gy_s.rgbtBlue) )) ;
+                BYTE Blue=x3;
+                if (x3>255)
                 {
                     image[rows][columns].rgbtBlue = 0xff;
                 }
                 else
                 {
-                    image[rows][columns].rgbtBlue = round(sqrt(sqr(gx_s.rgbtBlue) + sqr(gy_s.rgbtBlue)));
+                    image[rows][columns].rgbtBlue = Blue;
                 }
             }
             gx_s.rgbtRed = 0;
