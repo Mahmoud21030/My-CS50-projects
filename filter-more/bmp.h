@@ -78,5 +78,5 @@ typedef struct
     int  rgbtBlue;
     int  rgbtGreen;
     int  rgbtRed;
-} __attribute__((__packed__))
+} 
 RGBint;
