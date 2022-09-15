@@ -291,7 +291,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 {
     RGBTRIPLE temp;
 
-        int gx[3][3] = {{-1, 0, 1},
+    int gx[3][3] = {{-1, 0, 1},
                         {-2, 0, 2},
                         {-1, 0, 1}};
 
