@@ -319,9 +319,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int columns = 0; columns < width; columns++)
         {
-            for (int r = (rows - 1); r =< (rows + 1); r++)
+            for (int r = (rows - 1); r <= (rows + 1); r++)
             {
-                for (int c = (columns - 1); c =< (columns + 1); c++)
+                for (int c = (columns - 1); c <= (columns + 1); c++)
                 {
                     if (r >= 0 && r < height && c >= 0 && c < width)
                     {
