@@ -152,16 +152,16 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                                             copy[rows -1][column].rgbtBlue+ //up
                                             copy[rows - 1][column-1].rgbtBlue+ //up left
                                             copy[rows -1][column+1].rgbtBlue)/6; //up right
-                image[rows][column].rgbtRed =( copy[rows ][column-1].rgbtRed+ //sideleft
+                image[rows][column].rgbtRed = (copy[rows ][column-1].rgbtRed+ //sideleft
                                             copy[rows ][column+1].rgbtRed+ //sideright
-                                            copy[rows +1][column].rgbtRed+ //down
-                                            copy[rows + 1][column-1].rgbtRed+ //down left
-                                            copy[rows +1][column+1].rgbtRed)/6; //down right
-                image[rows][column].rgbtGreen =( copy[rows ][column-1].rgbtGreen+ //sideleft
+                                            copy[rows -1][column].rgbtRed+ //up
+                                            copy[rows - 1][column-1].rgbtRed+ //up left
+                                            copy[rows -1][column+1].rgbtRed)/6; //up right
+                image[rows][column].rgbtGreen = (copy[rows ][column-1].rgbtGreen+ //sideleft
                                             copy[rows ][column+1].rgbtGreen+ //sideright
-                                            copy[rows +1][column].rgbtGreen+ //down
-                                            copy[rows + 1][column-1].rgbtGreen+ //down left
-                                            copy[rows +1][column+1].rgbtGreen)/6; //down right
+                                            copy[rows -1][column].rgbtGreen+ //up
+                                            copy[rows - 1][column-1].rgbtGreen+ //up left
+                                            copy[rows -1][column+1].rgbtGreen)/6; //up right
             }
         }
     }
