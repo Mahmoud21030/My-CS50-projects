@@ -1,5 +1,6 @@
 #include "helpers.h"
 #include <math.h>
+define sqr(x) (x)*(x)
 // BYTE  rgbtBlue;
 //  BYTE  rgbtGreen;
 //  BYTE  rgbtRed;
@@ -289,6 +290,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
+    RGBTRIPLE gx_s;
+    RGBTRIPLE gy_s;
 
     RGBTRIPLE copy[height][width];
     for (int x = 0; x < height; x++)
@@ -314,14 +317,17 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             {
                 for (int c = (columns - 1); c < (columns + 1); c++)
                 { // getting gx*pixel
-                    image[rows][columns].rgbtRed = gx[r][c] * copy[rows][columns].rgbtRed;
-                    image[rows][columns].rgbtGreen = gx[r][c] * copy[rows][columns].rgbtGreen;
-                    image[rows][columns].rgbtBlue = gx[r][c] * copy[rows][columns].rgbtBlue;
+                    gx_s.rgbtRed += gx[r][c] * copy[rows][columns].rgbtRed;
+                    gx_s.rgbtGreen += gx[r][c] * copy[rows][columns].rgbtGreen;
+                    gx_s.rgbtBlue += gx[r][c] * copy[rows][columns].rgbtBlue;
                  // getting gy*pixel
-                    image[rows][columns].rgbtRed = gy[r][c] * copy[rows][columns].rgbtRed;
-                    image[rows][columns].rgbtGreen = gy[r][c] * copy[rows][columns].rgbtGreen;
-                    image[rows][columns].rgbtBlue = gy[r][c] * copy[rows][columns].rgbtBlue;
+                    gy_s.rgbtRed += gy[r][c] * copy[rows][columns].rgbtRed;
+                    gy_s.rgbtGreen += gy[r][c] * copy[rows][columns].rgbtGreen;
+                    gy_s.rgbtBlue += gy[r][c] * copy[rows][columns].rgbtBlue;
 
+                    image[rows][columns] = sqrt(sqr(gx_s.rgbtGreen)+sqr(gy_s.rgbtGreen));
+                    image[rows][columns] = sqrt(sqr(gx_s.rgbtRed)+sqr(gy_s.rgbtRed));
+                    image[rows][columns] = sqrt(sqr(gx_s.rgbtBlue)+sqr(gy_s.rgbtBlue));
 
                 }
             }
