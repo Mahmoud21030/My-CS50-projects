@@ -290,8 +290,12 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
-    RGBTRIPLE gx_s;
-    RGBTRIPLE gy_s;
+int gx_s_rgbtRed=0;
+int gx_s_rgbtBlue=0;
+int gx_s_rgbtGreen=0;
+int gy_s_rgbtRed=0;
+int gy_s_rgbtBlue=0;
+int gy_s_rgbtGreen=0;
 
     RGBTRIPLE copy[height][width];
     for (int x = 0; x < height; x++)
@@ -319,17 +323,17 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 {   if(r>=0 && r<height && c>=0 && c<width)
                     // getting gx*pixel
 
-                    gx_s.rgbtRed += gx[r][c] * copy[rows][columns].rgbtRed;
-                    gx_s.rgbtGreen += gx[r][c] * copy[rows][columns].rgbtGreen;
-                    gx_s.rgbtBlue += gx[r][c] * copy[rows][columns].rgbtBlue;
+                    gx_s_rgbtRed += gx[r][c] * copy[rows][columns]_rgbtRed;
+                    gx_s_rgbtGreen += gx[r][c] * copy[rows][columns]_rgbtGreen;
+                    gx_s_rgbtBlue += gx[r][c] * copy[rows][columns]_rgbtBlue;
                     // getting gy*pixel
-                    gy_s.rgbtRed += gy[r][c] * copy[rows][columns].rgbtRed;
-                    gy_s.rgbtGreen += gy[r][c] * copy[rows][columns].rgbtGreen;
-                    gy_s.rgbtBlue += gy[r][c] * copy[rows][columns].rgbtBlue;
-
-                    image[rows][columns] = sqrt(sqr(gx_s.rgbtGreen)+sqr(gy_s.rgbtGreen));
-                    image[rows][columns] = sqrt(sqr(gx_s.rgbtRed)+sqr(gy_s.rgbtRed));
-                    image[rows][columns] = sqrt(sqr(gx_s.rgbtBlue)+sqr(gy_s.rgbtBlue));
+                    gy_s_rgbtRed += gy[r][c] * copy[rows][columns]_rgbtRed;
+                    gy_s_rgbtGreen += gy[r][c] * copy[rows][columns]_rgbtGreen;
+                    gy_s_rgbtBlue += gy[r][c] * copy[rows][columns]_rgbtBlue;
+                    
+                    image[rows][columns] = sqrt(sqr(gx_s_rgbtGreen)+sqr(gy_s_rgbtGreen));
+                    image[rows][columns] = sqrt(sqr(gx_s_rgbtRed)+sqr(gy_s_rgbtRed));
+                    image[rows][columns] = sqrt(sqr(gx_s_rgbtBlue)+sqr(gy_s_rgbtBlue));
 
                 }
             }
