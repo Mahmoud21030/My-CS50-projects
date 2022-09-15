@@ -14,7 +14,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
             temp = ceil(image[rows][column].rgbtBlue +
                     image[rows][column].rgbtRed +
                     image[rows][column].rgbtGreen) /
-                   3;
+                   3.0;
             image[rows][column].rgbtBlue = temp;
             image[rows][column].rgbtRed = temp;
             image[rows][column].rgbtGreen = temp;
