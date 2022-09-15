@@ -330,7 +330,10 @@ int gy_s_rgbtGreen=0;
                     gy_s_rgbtRed += gy[r][c] * copy[rows][columns]_rgbtRed;
                     gy_s_rgbtGreen += gy[r][c] * copy[rows][columns]_rgbtGreen;
                     gy_s_rgbtBlue += gy[r][c] * copy[rows][columns]_rgbtBlue;
-                    
+                    if(gx_s_rgbtRed>255){gx_s_rgbtRed=255;}
+                    if(gx_s_rgbtGreen>255){gx_s_rgbtRed=255;}
+                    if(gx_s_rgbtRed>255){gx_s_rgbtRed=255;}
+
                     image[rows][columns] = sqrt(sqr(gx_s_rgbtGreen)+sqr(gy_s_rgbtGreen));
                     image[rows][columns] = sqrt(sqr(gx_s_rgbtRed)+sqr(gy_s_rgbtRed));
                     image[rows][columns] = sqrt(sqr(gx_s_rgbtBlue)+sqr(gy_s_rgbtBlue));
