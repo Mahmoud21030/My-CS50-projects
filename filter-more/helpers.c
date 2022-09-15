@@ -1,6 +1,13 @@
 #include "helpers.h"
 #include <math.h>
 #define sqr(x) (x) * (x)
+typedef struct
+{
+    int  rgbtBlue;
+    int  rgbtGreen;
+    int  rgbtRed;
+}
+RGBint;
 // BYTE  rgbtBlue;
 //  BYTE  rgbtGreen;
 //  BYTE  rgbtRed;
@@ -318,22 +325,22 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     for (int rows = 0; rows < height; rows++)
     {
         for (int columns = 0; columns < width; columns++)
-        {
-            for (int r = (rows - 1),int x=0; r <= (rows + 1); r++)
-            {
-                for (int c = (columns - 1),int y=0; c <= (columns + 1); c++)
+        {int x=0;
+            for (int r = (rows - 1); r <= (rows + 1); r++)
+            {int y=0;
+                for (int c = (columns - 1); c <= (columns + 1); c++)
                 {
                     if (r >= 0 && r < height && c >= 0 && c < width)
                     {
                         // getting gx*pixel
 
-                        gx_s.rgbtRed += gx[r][c] * copy[r][c].rgbtRed;
-                        gx_s.rgbtGreen += gx[r][c] * copy[r][c].rgbtGreen;
-                        gx_s.rgbtBlue += gx[r][c] * copy[r][c].rgbtBlue;
+                        gx_s.rgbtRed += gx[x][y] * copy[r][c].rgbtRed;
+                        gx_s.rgbtGreen += gx[x][y] * copy[r][c].rgbtGreen;
+                        gx_s.rgbtBlue += gx[x][y] * copy[r][c].rgbtBlue;
                         // getting gy*pixel
-                        gy_s.rgbtRed += gy[r][c] * copy[r][c].rgbtRed;
-                        gy_s.rgbtGreen += gy[r][c] * copy[r][c].rgbtGreen;
-                        gy_s.rgbtBlue += gy[r][c] * copy[r][c].rgbtBlue;
+                        gy_s.rgbtRed += gy[x][y] * copy[r][c].rgbtRed;
+                        gy_s.rgbtGreen += gy[x][y] * copy[r][c].rgbtGreen;
+                        gy_s.rgbtBlue += gy[x][y] * copy[r][c].rgbtBlue;
 
                         if (sqrt(sqr(gx_s.rgbtGreen) + sqr(gy_s.rgbtGreen)) > 255)
                         {
