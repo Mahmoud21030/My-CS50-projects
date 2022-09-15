@@ -327,41 +327,41 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     {
                         // getting gx*pixel
 
-                        gx_s.rgbtRed += gx[r][c] * copy[rows][columns].rgbtRed;
-                        gx_s.rgbtGreen += gx[r][c] * copy[rows][columns].rgbtGreen;
-                        gx_s.rgbtBlue += gx[r][c] * copy[rows][columns].rgbtBlue;
+                        gx_s.rgbtRed += gx[r][c] * copy[r][c].rgbtRed;
+                        gx_s.rgbtGreen += gx[r][c] * copy[r][c].rgbtGreen;
+                        gx_s.rgbtBlue += gx[r][c] * copy[r][c].rgbtBlue;
                         // getting gy*pixel
-                        gy_s.rgbtRed += gy[r][c] * copy[rows][columns].rgbtRed;
-                        gy_s.rgbtGreen += gy[r][c] * copy[rows][columns].rgbtGreen;
-                        gy_s.rgbtBlue += gy[r][c] * copy[rows][columns].rgbtBlue;
+                        gy_s.rgbtRed += gy[r][c] * copy[r][c].rgbtRed;
+                        gy_s.rgbtGreen += gy[r][c] * copy[r][c].rgbtGreen;
+                        gy_s.rgbtBlue += gy[r][c] * copy[r][c].rgbtBlue;
 
                         if (sqrt(sqr(gx_s.rgbtGreen) + sqr(gy_s.rgbtGreen)) > 255)
                         {
-                            image[rows][columns].rgbtGreen = 255;
+                            image[r][c].rgbtGreen = 255;
                         }
                         else
                         {
-                            image[rows][columns].rgbtGreen = sqrt(sqr(gx_s.rgbtGreen) + sqr(gy_s.rgbtGreen));
+                            image[r][c].rgbtGreen = sqrt(sqr(gx_s.rgbtGreen) + sqr(gy_s.rgbtGreen));
                         }
 
 
                         if (sqrt(sqr(gx_s.rgbtRed) + sqr(gy_s.rgbtRed)))
                         {
-                            image[rows][columns].rgbtRed = 255;
+                            image[r][c].rgbtRed = 255;
                         }
                         else
                         {
-                            image[rows][columns].rgbtRed = sqrt(sqr(gx_s.rgbtRed) + sqr(gy_s.rgbtRed));
+                            image[r][c].rgbtRed = sqrt(sqr(gx_s.rgbtRed) + sqr(gy_s.rgbtRed));
                         }
 
 
                         if (sqrt(sqr(gx_s.rgbtBlue) + sqr(gy_s.rgbtBlue)) > 255)
                         {
-                            image[rows][columns].rgbtBlue = 255;
+                            image[r][c].rgbtBlue = 255;
                         }
                         else
                         {
-                            image[rows][columns].rgbtBlue = sqrt(sqr(gx_s.rgbtBlue) + sqr(gy_s.rgbtBlue));
+                            image[r][c].rgbtBlue = sqrt(sqr(gx_s.rgbtBlue) + sqr(gy_s.rgbtBlue));
                         }
 
 
