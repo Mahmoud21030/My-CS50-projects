@@ -342,38 +342,37 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         gy_s.rgbtRed += gy[x][y] * copy[r][c].rgbtRed;
                         gy_s.rgbtGreen += gy[x][y] * copy[r][c].rgbtGreen;
                         gy_s.rgbtBlue += gy[x][y] * copy[r][c].rgbtBlue;
-
-                        if (sqrt(sqr(gx_s.rgbtGreen) + sqr(gy_s.rgbtGreen)) > 255)
-                        {
-                            image[rows][columns].rgbtGreen = 255;
-                        }
-                        else
-                        {
-                           image[rows][columns].rgbtGreen = sqrt(sqr(gx_s.rgbtGreen) + sqr(gy_s.rgbtGreen));
-                        }
-
-                        if (sqrt(sqr(gx_s.rgbtRed) + sqr(gy_s.rgbtRed)) > 255)
-                        {
-                            image[rows][columns].rgbtRed = 255;
-                        }
-                        else
-                        {
-                           image[rows][columns].rgbtRed = sqrt(sqr(gx_s.rgbtRed) + sqr(gy_s.rgbtRed));
-                        }
-
-                        if (sqrt(sqr(gx_s.rgbtBlue) + sqr(gy_s.rgbtBlue)) > 255)
-                        {
-                           image[rows][columns].rgbtBlue = 255;
-                        }
-                        else
-                        {
-                            image[rows][columns].rgbtBlue = sqrt(sqr(gx_s.rgbtBlue) + sqr(gy_s.rgbtBlue));
-                        }
                     }
                     y++;
                 }
 
                 x++;
+                if (sqrt(sqr(gx_s.rgbtGreen) + sqr(gy_s.rgbtGreen)) > 255)
+                {
+                    image[rows][columns].rgbtGreen = 255;
+                }
+                else
+                {
+                    image[rows][columns].rgbtGreen = sqrt(sqr(gx_s.rgbtGreen) + sqr(gy_s.rgbtGreen));
+                }
+
+                if (sqrt(sqr(gx_s.rgbtRed) + sqr(gy_s.rgbtRed)) > 255)
+                {
+                    image[rows][columns].rgbtRed = 255;
+                }
+                else
+                {
+                    image[rows][columns].rgbtRed = sqrt(sqr(gx_s.rgbtRed) + sqr(gy_s.rgbtRed));
+                }
+
+                if (sqrt(sqr(gx_s.rgbtBlue) + sqr(gy_s.rgbtBlue)) > 255)
+                {
+                    image[rows][columns].rgbtBlue = 255;
+                }
+                else
+                {
+                    image[rows][columns].rgbtBlue = sqrt(sqr(gx_s.rgbtBlue) + sqr(gy_s.rgbtBlue));
+                }
             }
             gx_s.rgbtRed = 0;
             gx_s.rgbtGreen = 0;
