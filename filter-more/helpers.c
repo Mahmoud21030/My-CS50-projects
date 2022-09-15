@@ -3,9 +3,9 @@
 #define sqr(x) (x) * (x)
 typedef struct
 {
-    int rgbtBlue;
-    int rgbtGreen;
-    int rgbtRed;
+   unsigned int rgbtBlue;
+   unsigned  int rgbtGreen;
+   unsigned int rgbtRed;
 } RGBint;
 // BYTE  rgbtBlue;
 //  BYTE  rgbtGreen;
