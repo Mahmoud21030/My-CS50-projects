@@ -359,6 +359,11 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         {
                             image[rows][columns].rgbtBlue = sqrt(sqr(gx_s.rgbtBlue) + sqr(gy_s.rgbtBlue));
                         }
+                         gx_s.rgbtRed=0;
+                         gx_s.rgbtGreen=0;
+                         gx_s.rgbtBlue=0;
+                         gy_s.rgbtRed=0;
+                         gy_s.rgbtBlue=0;
                     }
                 }
             }
