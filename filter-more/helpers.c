@@ -57,7 +57,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         {
             if (column > 0 && rows > 0 && column < (width - 1) && rows < (height-1)) // first type-1 all sides
             {
-                image[rows][column].rgbtBlue = (copy[rows - 1][column - 1].rgbtBlue +
+                image[rows][column].rgbtBlue = round(image[rows][column].rgbtBlue+
+                                                copy[rows - 1][column - 1].rgbtBlue +
                                                 copy[rows + 1][column + 1].rgbtBlue +
                                                 copy[rows][column - 1].rgbtBlue +
                                                 copy[rows - 1][column].rgbtBlue +
@@ -65,9 +66,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                                                 copy[rows + 1][column].rgbtBlue +
                                                 copy[rows - 1][column + 1].rgbtBlue +
                                                 copy[rows + 1][column - 1].rgbtBlue) /
-                                               8;
+                                               9.0;
 
-                image[rows][column].rgbtRed = (copy[rows - 1][column - 1].rgbtRed +
+                image[rows][column].rgbtRed = round(copy[rows - 1][column - 1].rgbtRed +
                                                copy[rows + 1][column + 1].rgbtRed +
                                                copy[rows][column - 1].rgbtRed +
                                                copy[rows - 1][column].rgbtRed +
@@ -75,7 +76,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                                                copy[rows + 1][column].rgbtRed +
                                                copy[rows - 1][column + 1].rgbtRed +
                                                copy[rows + 1][column - 1].rgbtRed) /
-                                              8;
+                                              9.0;
 
                 image[rows][column].rgbtGreen = (copy[rows - 1][column - 1].rgbtGreen +
                                                  copy[rows + 1][column + 1].rgbtGreen +
