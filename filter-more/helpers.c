@@ -347,22 +347,31 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 }
 
                 x++;
-                 (round(sqrt(sqr(gx_s.rgbtGreen) + sqr(gy_s.rgbtGreen))) > 255)?
-                 image[rows][columns].rgbtGreen = 255:
-                 image[rows][columns].rgbtGreen = round(sqrt(sqr(gx_s.rgbtGreen) + sqr(gy_s.rgbtGreen)));
+                if ((BYTE)round(sqrt(sqr(gx_s.rgbtGreen) + sqr(gy_s.rgbtGreen))) > 255)
+                {
+                    image[rows][columns].rgbtGreen = 255;
+                }
+                else
+                {
+                    image[rows][columns].rgbtGreen = (BYTE)round(sqrt(sqr(gx_s.rgbtGreen) + sqr(gy_s.rgbtGreen)));
+                }
 
+               if ((BYTE)round(sqrt(sqr(gx_s.rgbtRed) + sqr(gy_s.rgbtRed))) > 255)
+                {
+                    image[rows][columns].rgbtRed = 255;
+                }
+                else
+                {
+                    image[rows][columns].rgbtRed = (BYTE)round(sqrt(sqr(gx_s.rgbtRed) + sqr(gy_s.rgbtRed)));
+                }
 
-                (round(sqrt(sqr(gx_s.rgbtRed) + sqr(gy_s.rgbtRed))) > 255)?image[rows][columns].rgbtRed = 255:
-                image[rows][columns].rgbtRed = round(sqrt(sqr(gx_s.rgbtRed) + sqr(gy_s.rgbtRed)));
-
-
-                if (round(sqrt(sqr(gx_s.rgbtBlue) + sqr(gy_s.rgbtBlue) )) > 255)
+                if ((BYTE)round(sqrt(sqr(gx_s.rgbtBlue) + sqr(gy_s.rgbtBlue) )) > 255)
                 {
                     image[rows][columns].rgbtBlue = 255;
                 }
                 else
                 {
-                    image[rows][columns].rgbtBlue = round(sqrt(sqr(gx_s.rgbtBlue) + sqr(gy_s.rgbtBlue)));
+                    image[rows][columns].rgbtBlue = (BYTE)round(sqrt(sqr(gx_s.rgbtBlue) + sqr(gy_s.rgbtBlue)));
                 }
             }
             gx_s.rgbtRed = 0;
