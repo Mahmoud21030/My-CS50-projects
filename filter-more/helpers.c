@@ -55,7 +55,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int column = 0; column < width; column++)
         {
-            if (column > 0 && rows > 0 && column < (width - 1) && rows < (height)) // first type-1 all sides
+            if (column > 0 && rows > 0 && column < (width - 1) && rows < (height-1)) // first type-1 all sides
             {
                 image[rows][column].rgbtBlue = (copy[rows - 1][column - 1].rgbtBlue +
                                                 copy[rows + 1][column + 1].rgbtBlue +
