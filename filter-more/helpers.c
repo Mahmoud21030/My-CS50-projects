@@ -246,12 +246,12 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                                             copy[rows -1][column].rgbtBlue+ //down
                                             copy[rows -1][column+1].rgbtBlue)/4.0); //down side
 
-                 image[rows][column].rgbtRed = round((image[rows][column].rgbtBlue+
+                 image[rows][column].rgbtRed = round((image[rows][column].rgbtRed+
                                             copy[rows ][column+1].rgbtRed+//side
                                             copy[rows -1][column].rgbtRed+ //down
 
                                             copy[rows -1][column+1].rgbtRed)/4.0); //down side
-                 image[rows][column].rgbtGreen = round((image[rows][column].rgbtBlue+
+                 image[rows][column].rgbtGreen = round((image[rows][column].rgbtGreen+
                                             copy[rows ][column+1].rgbtGreen+//side
                                             copy[rows -1][column].rgbtGreen+ //down
 
