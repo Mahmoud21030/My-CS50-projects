@@ -313,13 +313,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             copy[x][y] = image[x][y];
         }
     }
-    int gx[3][3] = {{-1, 0, 1},
-                    {-2, 0, 2},
-                    {-1, 0, 1}};
+    int gx[3][3] = {{-1, 0, 1}, {-2, 0, 2}, {-1, 0, 1}};
 
-    int gy[3][3] = {{-1, -2, -1},
-                    {0, 0, 0},
-                    {1, 2, 1}};
+    int gy[3][3] = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}};
 
     for (int rows = 0; rows < height; rows++)
     {
@@ -356,7 +352,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     image[rows][columns].rgbtGreen = round(sqrt(sqr(gx_s.rgbtGreen) + sqr(gy_s.rgbtGreen)));
                 }
 
-               if (round(sqrt(sqr(gx_s.rgbtRed) + sqr(gy_s.rgbtRed))) > 0xff)
+                if (round(sqrt(sqr(gx_s.rgbtRed) + sqr(gy_s.rgbtRed))) > 0xff)
                 {
                     image[rows][columns].rgbtRed = 0xff;
                 }
@@ -365,7 +361,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     image[rows][columns].rgbtRed = round(sqrt(sqr(gx_s.rgbtRed) + sqr(gy_s.rgbtRed)));
                 }
 
-                if (round(sqrt(sqr(gx_s.rgbtBlue) + sqr(gy_s.rgbtBlue) )) > 0xff)
+                if (round(sqrt(sqr(gx_s.rgbtBlue) + sqr(gy_s.rgbtBlue))) > 0xff)
                 {
                     image[rows][columns].rgbtBlue = 0xff;
                 }
