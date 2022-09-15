@@ -3,11 +3,10 @@
 #define sqr(x) (x) * (x)
 typedef struct
 {
-    int  rgbtBlue;
-    int  rgbtGreen;
-    int  rgbtRed;
-}
-RGBint;
+    int rgbtBlue;
+    int rgbtGreen;
+    int rgbtRed;
+} RGBint;
 // BYTE  rgbtBlue;
 //  BYTE  rgbtGreen;
 //  BYTE  rgbtRed;
@@ -325,9 +324,11 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     for (int rows = 0; rows < height; rows++)
     {
         for (int columns = 0; columns < width; columns++)
-        {int x=0;
+        {
+            int x = 0;
             for (int r = (rows - 1); r <= (rows + 1); r++)
-            {int y=0;
+            {
+                int y = 0;
                 for (int c = (columns - 1); c <= (columns + 1); c++)
                 {
                     if (r >= 0 && r < height && c >= 0 && c < width)
@@ -351,8 +352,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                             image[r][c].rgbtGreen = sqrt(sqr(gx_s.rgbtGreen) + sqr(gy_s.rgbtGreen));
                         }
 
-
-                        if (sqrt(sqr(gx_s.rgbtRed) + sqr(gy_s.rgbtRed))> 255)
+                        if (sqrt(sqr(gx_s.rgbtRed) + sqr(gy_s.rgbtRed)) > 255)
                         {
                             image[r][c].rgbtRed = 255;
                         }
@@ -360,7 +360,6 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         {
                             image[r][c].rgbtRed = sqrt(sqr(gx_s.rgbtRed) + sqr(gy_s.rgbtRed));
                         }
-
 
                         if (sqrt(sqr(gx_s.rgbtBlue) + sqr(gy_s.rgbtBlue)) > 255)
                         {
@@ -370,19 +369,17 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         {
                             image[r][c].rgbtBlue = sqrt(sqr(gx_s.rgbtBlue) + sqr(gy_s.rgbtBlue));
                         }
-
-
                     }
                     y++;
-
                 }
 
-           x++; }
-                         gx_s.rgbtRed=0;
-                         gx_s.rgbtGreen=0;
-                         gx_s.rgbtBlue=0;
-                         gy_s.rgbtRed=0;
-                         gy_s.rgbtBlue=0;
+                x++;
+            }
+            gx_s.rgbtRed = 0;
+            gx_s.rgbtGreen = 0;
+            gx_s.rgbtBlue = 0;
+            gy_s.rgbtRed = 0;
+            gy_s.rgbtBlue = 0;
         }
     }
 
