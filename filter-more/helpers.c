@@ -316,11 +316,12 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             for (int r = (rows - 1); r < (rows + 1); r++)
             {
                 for (int c = (columns - 1); c < (columns + 1); c++)
-                { // getting gx*pixel
+                {   if(r>=0 && r<height &&)
+                    // getting gx*pixel
                     gx_s.rgbtRed += gx[r][c] * copy[rows][columns].rgbtRed;
                     gx_s.rgbtGreen += gx[r][c] * copy[rows][columns].rgbtGreen;
                     gx_s.rgbtBlue += gx[r][c] * copy[rows][columns].rgbtBlue;
-                 // getting gy*pixel
+                    // getting gy*pixel
                     gy_s.rgbtRed += gy[r][c] * copy[rows][columns].rgbtRed;
                     gy_s.rgbtGreen += gy[r][c] * copy[rows][columns].rgbtGreen;
                     gy_s.rgbtBlue += gy[r][c] * copy[rows][columns].rgbtBlue;
