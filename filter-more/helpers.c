@@ -151,7 +151,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                                             copy[rows ][column+1].rgbtBlue+ //sideright
                                             copy[rows -1][column].rgbtBlue+ //up
                                             copy[rows - 1][column-1].rgbtBlue+ //up left
-                                            copy[rows -1][column+1].rgbtBlue)/6 //up right
+                                            copy[rows -1][column+1].rgbtBlue)/6; //up right
                 image[rows][column].rgbtRed =( copy[rows ][column-1].rgbtRed+ //sideleft
                                             copy[rows ][column+1].rgbtRed+ //sideright
                                             copy[rows +1][column].rgbtRed+ //down
