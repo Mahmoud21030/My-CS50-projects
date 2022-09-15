@@ -273,7 +273,13 @@ int gx[3][3]={{-1,0,1},
 int gy[3][3]={{-1,-2,-3},
                 {0,0,0},
                 {1,2,3}};
-
+for (int rows = 0; rows < height; rows++)
+    {
+        for (int columns = 0; column < width; column++)
+        {
+            for()
+        }
+    }
 
     return;
 }
