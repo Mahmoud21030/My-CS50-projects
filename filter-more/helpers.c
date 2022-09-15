@@ -358,7 +358,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         }
                         else
                         {
-                            image[rows][columns].rgbtRed = sqrt(sqr(gx_s.rgbtRed) + sqr(gy_s.rgbtRed));
+                           image[rows][columns].rgbtRed = sqrt(sqr(gx_s.rgbtRed) + sqr(gy_s.rgbtRed));
                         }
 
                         if (sqrt(sqr(gx_s.rgbtBlue) + sqr(gy_s.rgbtBlue)) > 255)
