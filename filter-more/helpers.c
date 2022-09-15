@@ -295,7 +295,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     int gx_s_rgbtGreen = 0;
     int gy_s_rgbtRed = 0;
     int gy_s_rgbtBlue = 0;
-    int gy_s_rgbtGreen = 0;
+    int gy_s_rgbtGreen = 0;*/
     RGBint gx_s;
     RGBint gy_s;
 
@@ -377,5 +377,5 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         }
     }
 
-    */return;
+    return;
 }
