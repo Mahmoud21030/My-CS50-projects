@@ -65,8 +65,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                                                 copy[rows][column + 1].rgbtBlue +
                                                 copy[rows + 1][column].rgbtBlue +
                                                 copy[rows - 1][column + 1].rgbtBlue +
-                                                copy[rows + 1][column - 1].rgbtBlue) /
-                                               9.0;
+                                                copy[rows + 1][column - 1].rgbtBlue /
+                                               9.0);
 
                 image[rows][column].rgbtRed = round( image[rows][column].rgbtRed+
                                                copy[rows - 1][column - 1].rgbtRed +
@@ -76,8 +76,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                                                copy[rows][column + 1].rgbtRed +
                                                copy[rows + 1][column].rgbtRed +
                                                copy[rows - 1][column + 1].rgbtRed +
-                                               copy[rows + 1][column - 1].rgbtRed) /
-                                              9.0;
+                                               copy[rows + 1][column - 1].rgbtRed /
+                                              9.0);
 
                 image[rows][column].rgbtGreen = round(image[rows][column].rgbtGreen+
                                                 copy[rows - 1][column - 1].rgbtGreen +
@@ -87,8 +87,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                                                  copy[rows][column + 1].rgbtGreen +
                                                  copy[rows + 1][column].rgbtGreen +
                                                  copy[rows - 1][column + 1].rgbtGreen +
-                                                 copy[rows + 1][column - 1].rgbtGreen) /
-                                                9.0;
+                                                 copy[rows + 1][column - 1].rgbtGreen /9.0);
             }
             else if ((rows != 0 && rows != (height-1)) && column == 0  )
             {
@@ -227,34 +226,36 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                                             copy[rows -1][column].rgbtBlue+ //down
                                             copy[rows -1][column+1].rgbtBlue/4.0); //down side
 
-                 image[rows][column].rgbtRed = (
+                 image[rows][column].rgbtRed = round(image[rows][column].rgbtRed+
                                             copy[rows ][column+1].rgbtRed+//side
                                             copy[rows -1][column].rgbtRed+ //down
 
-                                            copy[rows -1][column+1].rgbtRed)/3; //down side
-                 image[rows][column].rgbtGreen = (
+                                            copy[rows -1][column+1].rgbtRed/4.0);//down side
+
+                 image[rows][column].rgbtGreen = round(image[rows][column].rgbtGreen
                                             copy[rows ][column+1].rgbtGreen+//side
                                             copy[rows -1][column].rgbtGreen+ //down
 
-                                            copy[rows -1][column+1].rgbtGreen)/3; //down side
+                                            copy[rows -1][column+1].rgbtGreen/4.0); //down side
 
 }
             else if (column == (width -1) && rows == (height -1) )
             {    image[rows][column].rgbtBlue =
-                                            (copy[rows ][column+1].rgbtBlue+//side
+                                            round(image[rows][column].rgbtBlue+
+                                                copy[rows ][column+1].rgbtBlue+//side
                                             copy[rows -1][column].rgbtBlue+ //down
-                                            copy[rows -1][column+1].rgbtBlue)/3; //down side
+                                            copy[rows -1][column+1].rgbtBlue/4.0); //down side
 
-                 image[rows][column].rgbtRed = (
+                 image[rows][column].rgbtRed = round(image[rows][column].rgbtBlue+
                                             copy[rows ][column+1].rgbtRed+//side
                                             copy[rows -1][column].rgbtRed+ //down
 
-                                            copy[rows -1][column+1].rgbtRed)/3; //down side
-                 image[rows][column].rgbtGreen = (
+                                            copy[rows -1][column+1].rgbtRed/4.0); //down side
+                 image[rows][column].rgbtGreen = round(image[rows][column].rgbtBlue+
                                             copy[rows ][column+1].rgbtGreen+//side
                                             copy[rows -1][column].rgbtGreen+ //down
 
-                                            copy[rows -1][column+1].rgbtGreen)/3; //down side
+                                            copy[rows -1][column+1].rgbtGreen/4.0); //down side
 }
 
         }
