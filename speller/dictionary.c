@@ -22,7 +22,11 @@ node *table[N];
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    // TODO
+    cursor = table[hash(word)];
+    while(cursor != NULL)
+    {
+        if(strcasecmp ==0)
+    }
     return false;
 }
 
