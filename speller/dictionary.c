@@ -88,10 +88,10 @@ bool unload(void)
     {
         while (cursor != NULL)
         {
-            cursor = cursor->next;
+            table[i]=cursor->next;
+            free(cursor);
+            cursor = table[i];
         }
-        free(cursor);
-        return;
 
     }
     return false;
