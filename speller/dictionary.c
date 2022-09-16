@@ -90,7 +90,6 @@ bool unload(void)
         {
             cursor = cursor->next;
         }
-        unload();
         free(cursor);
         return;
 
