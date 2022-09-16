@@ -46,7 +46,7 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     FILE *file = fopen(dictionary, "r");
-    while (feof(file))
+    while (feof(file)==0)
     {
         node *n = malloc(sizeof(node));
         if(n == NULL)
