@@ -17,7 +17,7 @@ typedef struct node
 const unsigned int N = 26;
 
 // Hash table
-
+node *table[N];
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
@@ -35,7 +35,7 @@ unsigned int hash(const char *word)
 
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
-{   node *table[N];
+{
     FILE *file = fopen(dictionary, "r");
     while (ftell(file) != EOF)
     {
