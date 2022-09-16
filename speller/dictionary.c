@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "dictionary.h"
+#include <strings.h>
 
 // Represents a node in a hash table
 typedef struct node
@@ -22,10 +23,14 @@ node *table[N];
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    cursor = table[hash(word)];
+   node * cursor = table[hash(word)];
     while(cursor != NULL)
     {
-        if(strcasecmp ==0)
+        if(strcasecmp(word,cursor->word) ==0)
+        {
+            return true;
+        }
+    cursor =cursor->next;
     }
     return false;
 }
