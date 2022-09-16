@@ -16,7 +16,7 @@ typedef struct node
 
 // TODO: Choose number of buckets in hash table
 const unsigned int N = 26;
-int sizec=0;
+int sizec = 0;
 // Hash table
 node *table[N];
 
@@ -47,7 +47,7 @@ bool load(const char *dictionary)
 {
     FILE *file = fopen(dictionary, "r");
 
-    while (!feof(file) )
+    while (!feof(file))
     {
         node *n = malloc(sizeof(node));
         if (n == NULL)
@@ -76,13 +76,24 @@ bool load(const char *dictionary)
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
 {
-    
+
     return sizec;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    // TODO
+    node *cursor = table[0];
+    for (int i = 0; i < 26; i++)
+    {
+        while (cursor != NULL)
+        {
+            cursor = cursor->next;
+        }
+        unload();
+        free(cursor);
+        return;
+
+    }
     return false;
 }
