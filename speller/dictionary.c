@@ -55,7 +55,6 @@ bool load(const char *dictionary)
             return false;
         }
         sizec += fscanf(file, "%s", n->word);
-        n->next=NULL;
         if (n->word[0] != '\0')
         {
             if (table[hash(n->word)] == NULL)
