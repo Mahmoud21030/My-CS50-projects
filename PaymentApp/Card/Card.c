@@ -167,10 +167,10 @@ EN_cardError_t getCardExpiryDate(ST_cardData_t* cardData)
 	/* Checking if the length of the string is between 16 and 19 characters and
 	if all the characters in the string are numbers .If it is, it assigns the
 	adress of temp to cardData->primaryAccountNumber. */
-	if (strlen(temp) == 5 && s_isdate(temp))
+	if (strlen((char*)temp) == 5 && s_isdate((char*)temp))
 	{
-		strcpy(cardData->cardExpirationDate, temp);
-		printf("\n\n	Printing %s\n", cardData->cardExpirationDate);
+		strcpy((char*)cardData->cardExpirationDate, (char*)temp);
+		printf("\n\n	Printing %s\n",(char*)cardData->cardExpirationDate);
 		return OK;
 	}
 	else
