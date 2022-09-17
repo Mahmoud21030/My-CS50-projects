@@ -10,8 +10,9 @@
 // Represents a node in a hash table
 typedef struct node
 {
-    char word[LENGTH + 1];
+
     struct node *next;
+    char word[LENGTH + 1];
 } node;
 
 // TODO: Choose number of buckets in hash table
