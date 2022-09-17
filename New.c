@@ -4,7 +4,7 @@
 #include <ctype.h>
 #include <string.h>
 int main(){
-	
+
 }
 typedef struct ST_cardData_t
 {
@@ -43,6 +43,28 @@ EN_cardError_t getCardHolderName(ST_cardData_t* cardData)
 	{
 		return WRONG_NAME;
 	}
+}
+/**
+ * It checks if the string is a date in the format dd/mm/yyyy
+ *
+ * @param string The string to be checked.
+ *
+ * @return 1 if the format is correct, 0 if not
+ */
+int s_isdate(char* string)
+{
+	int n = strlen(string);
+	int counter = 0;
+	int month = atoi(string); //taking month to integer
+	for (int i = 0; i < n; i++) //checking the format
+	{
+		if (isdigit(string[i]) != 0)
+			counter++; //counter is the number of digits in format
+	}
+	if (counter == 4 && string[2] == '/' && month <13)
+		return 1;
+
+	return 0;
 }
 
 //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
