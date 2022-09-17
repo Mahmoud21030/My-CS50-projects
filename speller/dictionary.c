@@ -10,9 +10,8 @@
 // Represents a node in a hash table
 typedef struct node
 {
-
-    struct node *next;
     char word[LENGTH + 1];
+    struct node *next;
 } node;
 
 // TODO: Choose number of buckets in hash table
@@ -56,6 +55,7 @@ bool load(const char *dictionary)
             return false;
         }
         sizec += fscanf(file, "%s", n->word);
+
         if (n->word[0] != '\0')
         {
             if (table[hash(n->word)] == NULL)
@@ -69,9 +69,7 @@ bool load(const char *dictionary)
             }
         }
     }
-
     fclose(file);
-
     return true;
 }
 
