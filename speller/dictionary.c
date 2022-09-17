@@ -38,7 +38,9 @@ bool check(const char *word)
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
-    // TODO: Improve this hash function
+    if (toupper(word[0]) < 'a'){
+        return 0;
+    }
     return toupper(word[0]) - 'A';
 }
 
@@ -46,7 +48,7 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     FILE *file = fopen(dictionary, "r");
-    
+
     while (!feof(file))
     {
         node *n = malloc(sizeof(node));
