@@ -49,7 +49,7 @@ bool load(const char *dictionary)
 
     while (!feof(file))
     {
-        node *n = malloc(sizeof(node));
+        node *n = calloc(1,sizeof(node));
         if (n == NULL)
         {
             return false;
