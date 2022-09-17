@@ -46,10 +46,10 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     FILE *file = fopen(dictionary, "r");
-
+    node *n =NULL;
     while (!feof(file))
     {
-        node *n = calloc(1, sizeof(node));
+        n = calloc(1, sizeof(node));
         if (n == NULL)
         {
             return false;
