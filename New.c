@@ -33,7 +33,7 @@ EN_cardError_t getCardHolderName(ST_cardData_t* cardData)
 	adress of temp to cardData->cardHolderName. */
 	if (strlen(temp) > 19 && strlen(temp) < 25)
 	{
-		
+
 		printf("error %s", temp);
 		return OK;
 	}
@@ -42,5 +42,18 @@ EN_cardError_t getCardHolderName(ST_cardData_t* cardData)
 		return WRONG_NAME;
 	}
 }
+	/* Checking if the length of the string is between 19 and 25 characters. If it is, it assigns the
+		adress of temp to cardData->cardHolderName. */
+	if (strlen(temp) > 19 && strlen(temp) < 25 && s_isalpha(temp))
+	{
+		strcpy(cardData->cardHolderName, temp);
+		printf("error %s", cardData->cardHolderName);
+		return OK;
+	}
+	else
+	{
+		return WRONG_NAME;
+	}
+
 
 //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
