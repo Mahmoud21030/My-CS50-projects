@@ -54,7 +54,7 @@ bool load(const char *dictionary)
         {
             return false;
         }
-        sizec+=fscanf(file, "%s", n->word);
+        sizec += fscanf(file, "%s", n->word);
 
         if (n->word[0] != '\0')
         {
@@ -68,7 +68,6 @@ bool load(const char *dictionary)
                 table[hash(n->word)] = n;
             }
         }
-
     }
     fclose(file);
     return true;
@@ -84,18 +83,17 @@ unsigned int size(void)
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    node *cursor ;
+
+    node *cursor;
     for (int i = 0; i < 26; i++)
     {
         cursor = table[i];
         while (cursor != NULL)
         {
-            table[i]=cursor->next;
+            table[i] = cursor->next;
             free(cursor);
-            cursor =table[i];
+            cursor = table[i];
         }
-
-
     }
 
     return true;
