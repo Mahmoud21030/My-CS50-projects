@@ -38,9 +38,7 @@ bool check(const char *word)
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
-    if (toupper(word[0]) < 'a'){
-        return 0;
-    }
+
     return toupper(word[0]) - 'A';
 }
 
@@ -58,7 +56,7 @@ bool load(const char *dictionary)
         }
         sizec += fscanf(file, "%s", n->word);
 
-        if (n->word[0] != '\0')
+        if (n->word[0] <='Z' && n->word[0] >='a')
         {
             if (table[hash(n->word)] == NULL)
             {
