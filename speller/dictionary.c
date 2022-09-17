@@ -13,7 +13,7 @@ typedef struct node
     char word[LENGTH + 1];
     struct node *next;
 } node;
-
+bool yn;
 // TODO: Choose number of buckets in hash table
 const unsigned int N = 26;
 int sizec = 1;
@@ -38,7 +38,7 @@ bool check(const char *word)
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
-
+    // TODO: Improve this hash function
     return toupper(word[0]) - 'A';
 }
 
@@ -55,8 +55,8 @@ bool load(const char *dictionary)
             return false;
         }
         sizec += fscanf(file, "%s", n->word);
-
-        if (n->word[0] <='Z' && n->word[0] >='a')
+        yn=n->word[0] != '\0';
+        if (yn)
         {
             if (table[hash(n->word)] == NULL)
             {
