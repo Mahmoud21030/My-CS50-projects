@@ -1,11 +1,9 @@
-#ifndef Card_h
-#define Card_h
-#endif
+
 #include <stdio.h>
 #include <stdint.h>
 #include <ctype.h>
 #include <string.h>
-
+int main(){}
 typedef struct ST_cardData_t
 {
 	char cardHolderName[25];
@@ -24,17 +22,18 @@ typedef enum EN_cardError_t
 EN_cardError_t getCardHolderName(ST_cardData_t* cardData);
 EN_cardError_t getCardExpiryDate(ST_cardData_t* cardData);
 EN_cardError_t getCardPAN(ST_cardData_t* cardData);
+
 EN_cardError_t getCardHolderName(ST_cardData_t* cardData)
 {
 	char temp[25];
 	printf("**Please Enter The CardHolder Name: ");
-	scanf("%s",temp);
+	scanf("%s",cardData->cardHolderName);
 
 	/* Checking if the length of the string is between 19 and 25 characters. If it is, it assigns the
 	adress of temp to cardData->cardHolderName. */
 	if (strlen(temp) > 19 && strlen(temp) < 25)
 	{
-		(*cardData).cardHolderName= temp;
+		//cardData->cardHolderName= temp;
 		printf("error %s", temp);
 		return OK;
 	}
