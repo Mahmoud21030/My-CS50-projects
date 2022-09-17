@@ -1,4 +1,4 @@
-#include "card.h"
+#include "Card.h"
 
 /**
  * It takes the card data adress and gets the card holder name.
@@ -11,5 +11,5 @@ EN_cardError_t getCardHolderName(ST_cardData_t* cardData)
 	gets(temp);
 	if(strlen(temp)<20 && strlen(temp) > 24)
 		printf("error %s ", temp);
-	
+
 }
