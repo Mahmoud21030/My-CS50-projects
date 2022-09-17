@@ -17,7 +17,7 @@ EN_cardError_t getCardHolderName(ST_cardData_t* cardData)
 	/* Checking if the length of the string is between 19 and 25 characters and
 	if all the characters in the string are alphabetic .If it is, it assigns the
 	adress of temp to cardData->cardHolderName. */
-	if (strlen(temp) > 19 && strlen(temp) < 25 && s_isalpha(temp))
+	if (strlen((char*)temp) > 19 && strlen((char*)temp) < 25 && s_isalpha((char*)temp))
 	{
 		strcpy(cardData->cardHolderName, temp);
 		printf("\n	Printing %s\n", cardData->cardHolderName);
@@ -62,9 +62,9 @@ EN_cardError_t getCardPAN(ST_cardData_t* cardData)
 	/* Checking if the length of the string is between 16 and 19 characters and
 	if all the characters in the string are numbers .If it is, it assigns the
 	adress of temp to cardData->primaryAccountNumber. */
-	if (strlen(temp) > 15 && strlen(temp) < 20 && s_isdigit(temp) && isValidCard(temp)==0)
+	if (strlen((char*)temp) > 15 && strlen((char*)temp) < 20 && s_isdigit((char*)temp) && isValidCard((char*)temp)==0)
 	{
-		strcpy(cardData->primaryAccountNumber, temp); //saving into the struct
+		strcpy((char*)cardData->primaryAccountNumber, temp); //saving into the struct
 		printf("\n	Print %s\n", cardData->primaryAccountNumber);
 		_CrtDumpMemoryLeaks();
 		return OK;
@@ -170,7 +170,7 @@ EN_cardError_t getCardExpiryDate(ST_cardData_t* cardData)
 	adress of temp to cardData->primaryAccountNumber. */
 	if (strlen(temp) == 5 && s_isdate(temp))
 	{
-		strcpy(cardData->cardExpirationDate, temp);
+		strcpy((char*)cardData->cardExpirationDate, temp);
 		printf("\n\n	Printing %s\n", cardData->cardExpirationDate);
 		return OK;
 	}
