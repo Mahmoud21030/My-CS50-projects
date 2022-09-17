@@ -21,7 +21,7 @@ int main(void)
 }
 
 // =checking valid or not
-void checksum(double x)
+void checksum(long x)
 {
     int sum = 0;
     int l = getlen(x);
@@ -56,7 +56,7 @@ int getlen(double y)
     }
 }
 
-void digitize(double card)
+void digitize(long card)
 {
     int l = getlen(card);
     for (int i = 0; i < l; i++)
