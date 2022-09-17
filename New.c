@@ -1,27 +1,47 @@
+#ifndef Card_h
+#define Card_h
+#endif
 #include <stdio.h>
+#include <stdint.h>
+#include <ctype.h>
 
-/**
- * It takes the card data and gets the card holder name.
- *
- *  cardData a pointer to a structure of type ST_cardData_t.
- */
-/**
- * It returns 1 if all the characters in the string are alphabetic, and 0 otherwise
- *
- * @param string The string to be checked.
- *
- * @return the number of characters in the string that are alphabetic.
- */
-int s_isalpha(char* string)
+
+typedef struct ST_cardData_t
 {
-	int n = strlen(string);
-	int counter = 0;
-	for (int i = 0; i < n; i++)
+	uint8_t cardHolderName[25];
+	uint8_t primaryAccountNumber[20];
+	uint8_t cardExpirationDate[6];
+}ST_cardData_t;
+
+typedef enum EN_cardError_t
+{
+	OK,
+	WRONG_NAME,
+	WRONG_EXP_DATE,
+	WRONG_PAN
+}EN_cardError_t;
+
+EN_cardError_t getCardHolderName(ST_cardData_t* cardData);
+EN_cardError_t getCardExpiryDate(ST_cardData_t* cardData);
+EN_cardError_t getCardPAN(ST_cardData_t* cardData);
+EN_cardError_t getCardHolderName(ST_cardData_t* cardData)
+{
+	uint8_t temp[25];
+	printf("**Please Enter The CardHolder Name: ");
+	gets(temp);
+
+	/* Checking if the length of the string is between 19 and 25 characters. If it is, it assigns the
+	adress of temp to cardData->cardHolderName. */
+	if (strlen(temp) > 19 && strlen(temp) < 25)
 	{
-		if (isalpha(string[i]) != 0)
-		counter++;
+		cardData->cardHolderName= temp;
+		printf("error %s", temp);
+		return OK;
 	}
-	return counter == n;
+	else
+	{
+		return WRONG_NAME;
+	}
 }
 
 //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
