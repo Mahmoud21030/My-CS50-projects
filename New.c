@@ -14,7 +14,7 @@ int main()
 	scanf_s("%s %*s %d %s", name, &amount, unit);
 #endif
 	// use normal scanf_s
-	scanf_s("%s %*s %d %s", name, &amount, unit);
+	scanf("%s %*s %d %s", name, &amount, unit);
 	// print out new string using the extracted values
 	printf("% d %s of land is owned by %s\n", amount, unit, name);
 
