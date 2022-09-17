@@ -23,7 +23,7 @@ node *table[N];
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-   /* node *cursor = table[hash(word)];
+    node *cursor = table[hash(word)];
     while (cursor != NULL)
     {
         if (strcasecmp(word, cursor->word) == 0)
@@ -31,7 +31,7 @@ bool check(const char *word)
             return true;
         }
         cursor = cursor->next;
-    }*/
+    }
     return false;
 }
 
@@ -54,8 +54,8 @@ bool load(const char *dictionary)
         {
             return false;
         }
-       sizec += fscanf(file, "%s", n->word);
-       /*  n->next=NULL;
+        sizec += fscanf(file, "%s", n->word);
+        n->next=NULL;
         if (n->word[0] != '\0')
         {
             if (table[hash(n->word)] == NULL)
@@ -67,7 +67,7 @@ bool load(const char *dictionary)
                 n->next = table[hash(n->word)];
                 table[hash(n->word)] = n;
             }
-        }*/
+        }
     }
     fclose(file);
     return true;
