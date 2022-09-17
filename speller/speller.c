@@ -12,7 +12,7 @@
 #undef getrusage
 
 // Default dictionary
-#define DICTIONARY "dictionaries/small"
+#define DICTIONARY "dictionaries/large"
 
 // Prototype
 double calculate(const struct rusage *b, const struct rusage *a);
@@ -119,7 +119,7 @@ int main(int argc, char *argv[])
             // Print word if misspelled
             if (misspelled)
             {
-              //  printf("%s\n", word);
+               printf("%s\n", word);
                 misspellings++;
             }
 

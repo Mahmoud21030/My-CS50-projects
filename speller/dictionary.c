@@ -46,7 +46,7 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     FILE *file = fopen(dictionary, "r");
-    node *n =NULL;
+    node *n = NULL;
     while (!feof(file))
     {
         n = calloc(1, sizeof(node));
@@ -55,6 +55,7 @@ bool load(const char *dictionary)
             return false;
         }
         sizec += fscanf(file, "%s", n->word);
+
 
         if (n->word[0] != '\0')
         {
