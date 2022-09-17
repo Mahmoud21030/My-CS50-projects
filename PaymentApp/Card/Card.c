@@ -1,7 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 #include "Card.h"
-
 ///////////////////////////////////////////////////////////////////////////
 /////////////getCardHolderName////////////////////////////////////////////
 /**
@@ -12,14 +11,14 @@ EN_cardError_t getCardHolderName(ST_cardData_t* cardData)
 {
 	uint8_t temp[50]; // more space for avoiding crash in large input
 	printf("\n	Please Enter The CardHolder Name: ");
-	scanf("%s",temp);
+	gets(temp);
 
 	/* Checking if the length of the string is between 19 and 25 characters and
 	if all the characters in the string are alphabetic .If it is, it assigns the
 	adress of temp to cardData->cardHolderName. */
-	if (strlen((char*)temp) > 19 && strlen((char*)temp) < 25 && s_isalpha((char*)temp))
+	if (strlen((char *)temp) > 19 && strlen((char*)temp) < 25 && s_isalpha((char*)temp))
 	{
-		strcpy(cardData->cardHolderName, temp);
+		strcpy((char*)cardData->cardHolderName, (char*)temp);
 		printf("\n	Printing %s\n", cardData->cardHolderName);
 		return OK;
 	}
@@ -57,16 +56,16 @@ EN_cardError_t getCardPAN(ST_cardData_t* cardData)
 
 	printf("\nGenetrated Luhn(Valid Credit card number): %s\n You could use if you need it.\n",ptr);
 	printf("\n	Please Enter Your PAN: ");
-	gets(temp);
+	gets((char*)temp);
 
 	/* Checking if the length of the string is between 16 and 19 characters and
 	if all the characters in the string are numbers .If it is, it assigns the
 	adress of temp to cardData->primaryAccountNumber. */
-	if (strlen((char*)temp) > 15 && strlen((char*)temp) < 20 && s_isdigit((char*)temp) && isValidCard((char*)temp)==0)
+	if (strlen((char*)temp) > 15 && strlen((char*)temp) < 20
+	&& s_isdigit((char*)temp) && isValidCard((char*)temp)==0)
 	{
-		strcpy((char*)cardData->primaryAccountNumber, temp); //saving into the struct
-		printf("\n	Print %s\n", cardData->primaryAccountNumber);
-		_CrtDumpMemoryLeaks();
+		strcpy((char*)cardData->primaryAccountNumber, (char*)temp); //saving into the struct
+		printf("\n	Print %s\n", (char*)cardData->primaryAccountNumber);
 		return OK;
 	}
 	else
@@ -170,7 +169,7 @@ EN_cardError_t getCardExpiryDate(ST_cardData_t* cardData)
 	adress of temp to cardData->primaryAccountNumber. */
 	if (strlen(temp) == 5 && s_isdate(temp))
 	{
-		strcpy((char*)cardData->cardExpirationDate, temp);
+		strcpy(cardData->cardExpirationDate, temp);
 		printf("\n\n	Printing %s\n", cardData->cardExpirationDate);
 		return OK;
 	}
