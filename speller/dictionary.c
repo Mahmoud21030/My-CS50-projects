@@ -49,7 +49,7 @@ bool load(const char *dictionary)
 
     while (!feof(file))
     {
-        node *n = calloc(1,sizeof(node));
+        node *n = malloc(sizeof(node));
         if (n == NULL)
         {
             return false;
@@ -84,7 +84,7 @@ unsigned int size(void)
 bool unload(void)
 {
 
-    node *cursor;
+    node *cursor=table[0];;
     for (int i = 0; i < 26; i++)
     {
         cursor = table[i];
