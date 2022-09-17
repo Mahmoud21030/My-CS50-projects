@@ -33,7 +33,7 @@ EN_cardError_t getCardHolderName(ST_cardData_t* cardData)
 	adress of temp to cardData->cardHolderName. */
 	if (strlen(temp) > 19 && strlen(temp) < 25)
 	{
-		//cardData->cardHolderName= temp;
+		
 		printf("error %s", temp);
 		return OK;
 	}
