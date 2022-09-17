@@ -1,23 +1,17 @@
 #include <stdio.h>
 
-int main()
+/**
+ * It takes the card data and gets the card holder name.
+ *
+ *  cardData a pointer to a structure of type ST_cardData_t.
+ */
+EN_cardError_t getCardHolderName(ST_cardData_t* cardData)
 {
-	// variables in which to store data
-	char name[15];
-	char unit[15];
-	int amount;
+	char temp[25];
+	printf("**Please Enter The CardHolder Name ");
+	gets(temp);
+	if(strlen(temp)<20 && strlen(temp) > 24)
+		printf("error %s ", temp);
 
-	// taking input and storing in variables
-	// a sampleinput string would be:
-	// "Faraz owns 500 acres of land"
-#ifdef __STDC_LIB_EXT1__ // only use swscanf_s if __STDC_LIB_EXT1__ is already defined
-	scanf_s("%s %*s %d %s", name, &amount, unit);
-#endif
-	// use normal scanf_s
-	scanf("%s  %d %s", name, &amount, unit);
-	// print out new string using the extracted values
-	printf("% d %s of land is owned by %s\n", amount, unit, name);
-
-	return 0;
 }
 //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
