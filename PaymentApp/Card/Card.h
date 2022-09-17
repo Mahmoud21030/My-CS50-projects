@@ -1,6 +1,6 @@
 #ifndef Card_h
 #define Card_h
-#endif 
+#endif
 
 #include <stdio.h>
 #include <stdint.h>

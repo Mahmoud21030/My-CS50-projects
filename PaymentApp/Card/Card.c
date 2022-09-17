@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 #include "Card.h"
+
 ///////////////////////////////////////////////////////////////////////////
 /////////////getCardHolderName////////////////////////////////////////////
 /**
@@ -11,7 +12,7 @@ EN_cardError_t getCardHolderName(ST_cardData_t* cardData)
 {
 	uint8_t temp[50]; // more space for avoiding crash in large input
 	printf("\n	Please Enter The CardHolder Name: ");
-	gets(temp);
+	scanf("%s",temp);
 
 	/* Checking if the length of the string is between 19 and 25 characters and
 	if all the characters in the string are alphabetic .If it is, it assigns the
@@ -57,7 +58,7 @@ EN_cardError_t getCardPAN(ST_cardData_t* cardData)
 	printf("\nGenetrated Luhn(Valid Credit card number): %s\n You could use if you need it.\n",ptr);
 	printf("\n	Please Enter Your PAN: ");
 	gets(temp);
-	
+
 	/* Checking if the length of the string is between 16 and 19 characters and
 	if all the characters in the string are numbers .If it is, it assigns the
 	adress of temp to cardData->primaryAccountNumber. */
@@ -69,10 +70,10 @@ EN_cardError_t getCardPAN(ST_cardData_t* cardData)
 		return OK;
 	}
 	else
-	{	
+	{
 		return WRONG_PAN;
 	}
-	
+
 }
 
 bool s_isdigit(char* string)
@@ -132,8 +133,8 @@ uint8_t isValidCard(char* string)
  * @return A pointer to a string of characters.
  */
 uint8_t* CardGenerator(void)
-{	
-	//unsigned long long card to store 
+{
+	//unsigned long long card to store
 	//array to Arithmetic operation it's easier to handle thing with array
 	int n =15+rand()%3; //random length max 3 cz tha card max lenght is 19
 	time_t t;
@@ -191,7 +192,7 @@ bool s_isdate(char* string)
 {
 	int n = strlen(string);
 	int counter = 0;
-	int month = atoi(string); //taking month to integer 
+	int month = atoi(string); //taking month to integer
 	for (int i = 0; i < n; i++) //checking the format
 	{
 		if (isdigit(string[i]) != 0)
