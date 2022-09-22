@@ -69,8 +69,9 @@ bool load(const char *dictionary)
                 table[hash(n->word)] = n;
             }
         }
-        free(n);
+
     }
+    free(n);
     fclose(file);
     return true;
 }
