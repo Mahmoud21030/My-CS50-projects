@@ -71,6 +71,7 @@ bool load(const char *dictionary)
         }
     }
     fclose(file);
+    free(n);
     return true;
 }
 
