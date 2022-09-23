@@ -22,7 +22,7 @@ def main():
             team["rating"]= int(team["rating"])
             teams.append(team)
             counts[team["team"]]=0
-            print(team)
+           # print(team)
 
 
     print(simulate_tournament(teams))
@@ -31,8 +31,8 @@ def main():
     # TODO: Simulate N tournaments and keep track of win counts
 
     # Print each team's chances of winning, according to simulation
-    for team in sorted(counts, key=lambda team: counts[team], reverse=True):
-        print(f"{team}: {counts[team] * 100 / N:.1f}% chance of winning")
+  # for team in sorted(counts, key=lambda team: counts[team], reverse=True):
+     #   print(f"{team}: {counts[team] * 100 / N:.1f}% chance of winning")
 
 
 def simulate_game(team1, team2):
@@ -61,7 +61,9 @@ def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
     for i in range(4):
         teams = simulate_round(teams)
-
+        print(teams)
+        print("new")
+    return teams
 
 if __name__ == "__main__":
     main()
