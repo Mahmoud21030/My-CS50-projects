@@ -15,11 +15,11 @@ def main():
         sys.exit("Usage: python tournament.py FILENAME")
 
     teams = []
-    with open(argv[1],"r") as file
+    with open(sys.argv[1],"r") as file:
         reader = csv.DictReader(file)
         for team in reader:
-            teams.append(team[1])
-            print(team[1])
+            teams.append(team["team"])
+            print(team["team"])
 
 
 
