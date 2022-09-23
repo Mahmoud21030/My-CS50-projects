@@ -16,24 +16,23 @@ def main():
 
     teams = []
     counts = {}
-    with open(sys.argv[1],"r") as file:
+    with open(sys.argv[1], "r") as file:
         reader = csv.DictReader(file)
         for team in reader:
-            team["rating"]= int(team["rating"])
+            team["rating"] = int(team["rating"])
             teams.append(team)
-            counts[team["team"]]=int(0)
+            counts[team["team"]] = int(0)
            # print(team)
 
     for x in range(N):
-        winner =simulate_tournament(teams)
-        print(winner[0])
-
+        winner = simulate_tournament(teams)
+        counts[(winner[0])["team"]] += 1
 
     # TODO: Simulate N tournaments and keep track of win counts
 
-    # Print each team's chances of winning, according to simulation
-  # for team in sorted(counts, key=lambda team: counts[team], reverse=True):
-     #   print(f"{team}: {counts[team] * 100 / N:.1f}% chance of winning")
+     #Print each team's chances of winning, according to simulation
+    for team in sorted(counts, key=lambda team: counts[team], reverse=True):
+        print(f"{team}: {counts[team] * 100 / N:.1f}% chance of winning")
 
 
 def simulate_game(team1, team2):
