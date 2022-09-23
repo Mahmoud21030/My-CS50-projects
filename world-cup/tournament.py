@@ -21,10 +21,10 @@ def main():
         for team in reader:
             teams.append(team)
             counts[team["team"]]=0
-            #print(team["team"])
+            print(team)
 
 
-    print(simulate_tournament(teams))
+    #print(simulate_tournament(teams))
 
 
     # TODO: Simulate N tournaments and keep track of win counts
