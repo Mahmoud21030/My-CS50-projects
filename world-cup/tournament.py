@@ -16,8 +16,12 @@ def main():
 
     teams = []
     with open(argv[1],"r") as file
-        for team in file:
-            teams.append(team)
+        reader = csv.DictReader(file)
+        for team in reader:
+            teams.append(team[1])
+            print(team[1])
+
+
 
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
