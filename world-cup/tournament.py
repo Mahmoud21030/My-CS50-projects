@@ -22,7 +22,7 @@ def main():
             #print(team["team"])
 
     print(simulate_round(teams))
-
+    for i in reader:
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
 
