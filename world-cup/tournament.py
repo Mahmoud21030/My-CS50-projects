@@ -17,7 +17,7 @@ def main():
     teams = []
     with open(argv[1],"r") as file
         for team in file:
-            teams = teams.append(team)
+            teams.append(team)
 
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
