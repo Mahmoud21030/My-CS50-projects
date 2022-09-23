@@ -20,11 +20,10 @@ def main():
         reader = csv.DictReader(file)
         for team in reader:
             teams.append(team["team"])
-            name =str(team["team"])
-            counts[name]=int(0)
+            counts[team["team"]]=0
             #print(team["team"])
 
-    print(simulate_round(teams))
+
 
 
 
