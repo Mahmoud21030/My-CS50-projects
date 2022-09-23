@@ -19,7 +19,7 @@ def main():
         reader = csv.DictReader(file)
         for team in reader:
             teams.append(team["team"])
-            print(team["team"])
+            #print(team["team"])
 
 
 
