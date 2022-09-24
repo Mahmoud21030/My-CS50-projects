@@ -5,6 +5,7 @@ def main():
     Height = get_height()
     if(Height <1):
         print("Height must be higher than 0")
+        sys.exit()
     else:
         buildp(Height, Height)
 
