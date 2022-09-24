@@ -4,7 +4,15 @@ from math import floor
 change = get_float("Change owed: ")
 
 quarter = int(change / 25.0)
+change = change -quarter *25
 
-dime = int((quarter % 25) /10.0)
+dime = int(change /10.0)
+change = change -dime *10
 
-penn
+nickels =int(change/5)
+pennies = change -nickels*5
+
+print(quarter + dime + nickels + pennies)
+
+
+
