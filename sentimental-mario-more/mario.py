@@ -15,7 +15,7 @@ def buildp(number, loop):  # recursive func.
         return
     print(" " * (number-1), end="")  # the sape we want
     print("#"*(loop-number+1), end="")
-    print(" ", end="")
+    print("  ", end="")
     print("#"*(loop-number+1), end="")
     print(" " * (number-1))
     buildp(number-1, loop)
