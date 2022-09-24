@@ -1,7 +1,7 @@
 from cs50 import get_float
 from math import floor
 
-change = get_float("Change owed: ")
+change = 100*get_float("Change owed: ")
 
 quarter = int(change / 25.0)
 change = change -quarter *25
