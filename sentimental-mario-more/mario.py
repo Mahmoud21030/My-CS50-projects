@@ -17,9 +17,9 @@ def buildp(number, loop):  # recursive func.
 
 def get_height():
     while True:
-        try:
+        try:  # rejecting conditions
             Height = int(input("Height: "))
-            if(Height > 0):
+            if(Height > 0 and Height < 9):
                 return Height
         except ValueError:
             print("Enter valid value")
