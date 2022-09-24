@@ -3,10 +3,7 @@ import sys
 
 def main():
     Height = get_height()
-    if(Height <1):
-        sys.exit()
-    else:
-        buildp(Height, Height)
+    buildp(Height, Height)
 
 
 def buildp(number, loop):  # recursive func.
@@ -22,7 +19,8 @@ def get_height():
     while True:
         try:
             Height = int(input("Height: "))
-            return Height
+            if(Height > 0):
+                return Height
         except ValueError:
             print("Enter valid value")
  # running the main
