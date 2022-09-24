@@ -1,4 +1,4 @@
 
+name = input("What is your name?\n") #asking for the name
 
-name = input("What is your name?\n")
 print("hello, "+name)
