@@ -10,6 +10,7 @@ for letter in string: # getting l,s
         w += 1
     if (letter == "!" or letter == "."): # number of sentences
         s += 1
+    if(isalpa)
 
 l = len(string) #number of letters in string
 L = l/100
