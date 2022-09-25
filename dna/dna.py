@@ -17,7 +17,7 @@ def main():
     with open(database,"r") as t_file:
         table = csv.DictReader(t_file)
         for data in table:
-            compare.add([data])
+            compare.update([data])
             print(compare)
 
 
