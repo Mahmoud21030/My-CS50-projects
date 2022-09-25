@@ -10,11 +10,14 @@ def main():
     txtfile  =sys.argv[2]
 
 
-    with open(txtfile) as s_file ,open(database) as t_file:
+
+    with open(database) as t_file:
         table = csv.DictReader(t_file)
+        print(table)
+    with open(txtfile) as s_file:
         sequence = s_file.read()
         print(sequence)
-        print(table)
+
 
     # TODO: Read DNA sequence file into a variable
 
