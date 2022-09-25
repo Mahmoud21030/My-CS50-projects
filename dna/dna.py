@@ -4,13 +4,13 @@ import sys
 
 def main():
 
-    if len(sys.argv) != 2:
+    if len(sys.argv) != 3:
         sys.exit("Usage: python dna.py data.csv sequence.txt")
-    database =argv[1]
-    txtfile =sys.argv[2]
+    database =sys.argv[1]
+    txtfile  =sys.argv[2]
 
 
-    with open(txtfile) as s_file ,with open(database) as t_file:
+    with open(txtfile) as s_file ,open(database) as t_file:
         table = csv.DictReader(t_file)
         sequence = s_file.read()
         print(sequence)
