@@ -3,24 +3,25 @@ import sys
 
 
 def main():
-    compare=[]
-    if len(sys.argv) != 3:
+
+    compare = []  # our database
+
+    if len(sys.argv) != 3:  # check for commandline
         sys.exit("Usage: python dna.py data.csv sequence.txt")
-    database =sys.argv[1]
-    txtfile  =sys.argv[2]
+        # getting files' names
+    database = sys.argv[1]
+    txtfile = sys.argv[2]
 
+    with open(txtfile, "r") as s_file:
+        sequence = s_file.read()
+        for silce[]
+        print(sequence)
 
-    with open(txtfile,"r") as s_file:
-            sequence = s_file.read()
-            print(sequence)
-
-    with open(database,"r") as t_file:
+    with open(database, "r") as t_file:
         table = csv.DictReader(t_file)
         for data in table:
-            compare.update([data])
-            print(compare)
-
-
+            compare.append(data)
+    #print(compare[0]["AGATC"])
 
     # TODO: Read DNA sequence file into a variable
 
