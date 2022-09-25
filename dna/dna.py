@@ -4,12 +4,6 @@ import sys
 
 def main():
 
-    if(sys.argc == 3):
-        database = argv[1]
-        txtfile  = argv[2]
-    else:
-        print("Usage: python dna.py data.csv sequence.txt")
-        sys.exit()
 
 
     with open(txtfile) as file:
