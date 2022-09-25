@@ -37,10 +37,10 @@ def main():
             if( int(compare[j][i]) == int(results[i])):
                 counter+=1
                 if(counter == len(keys)):
-                    print(compare[j]["name"])
-                    break;
+                    #print(compare[j]["name"])
+                    sys.exit();
+    print("No match")
 
-   
 
     return
 
