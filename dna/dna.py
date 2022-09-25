@@ -29,14 +29,13 @@ def main():
     keys =list(compare[0].keys())[1:]
     results={}
     for i in keys:
-        results[i].append(longest_match(sequence,i))
+        results[i]= longest_match(sequence,i)
         print(results)
 
-    for i in compare:
-        if(int(i["AGATC"]) == AGATC and  int(i["AATG"]) == AATG and int(i["TATC"]) == TATC ):
-            print(i["name"])
-            sys.exit()
-    print("No match")
+    for j in compare:
+        #for i in keys:
+            #if( int(compare[j][i]) == int(results[i])):
+        print(j)
 
     # TODO: Check database for matching profiles
 
