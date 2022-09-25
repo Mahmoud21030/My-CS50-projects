@@ -3,10 +3,10 @@ import sys
 
 
 def main():
-
-    if(len(sys.argv) == 3):
-        database = argv[1]
-        txtfile  = argv[2]
+    sys.argv
+    if(len(sys.argv) == 2):
+        #database = argv[1]
+        txtfile  = argv[0]
     else:
         print("Usage: python dna.py data.csv sequence.txt")
         sys.exit()
