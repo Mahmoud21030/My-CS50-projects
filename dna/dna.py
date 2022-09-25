@@ -4,10 +4,16 @@ import sys
 
 def main():
 
+    if(len(sys.argv) == 3):
+        database = argv[1]
+        txtfile  = argv[2]
+    else:
+        print("Usage: python dna.py data.csv sequence.txt")
+        sys.exit()
 
 
     with open(txtfile) as file:
-        reader = csv.DictReader(file)
+        sequence = f.read(file)
         print(reader)
 
     # TODO: Read DNA sequence file into a variable
