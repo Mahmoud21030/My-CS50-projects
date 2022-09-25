@@ -8,13 +8,13 @@ l=0
 for letter in string: # getting l,s
     if (letter == " "):
         w += 1
-    if (letter == "!" or letter == "."): # number of sentences
+    if (letter == "!" or letter == "."or letter == "?"): # number of sentences
         s += 1
     if(letter.isalpha()):
         l+=1
 
 
-L = l/w *100
+L = l/w *100 #
 S = s/w *100
 eq =round(0.0588 * L - 0.296 * S - 15.8)
 
