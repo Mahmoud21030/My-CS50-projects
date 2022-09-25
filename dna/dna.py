@@ -14,8 +14,8 @@ def main():
 
     with open(txtfile, "r") as s_file:
         sequence = s_file.read()
-        for silce[]
-        print(sequence)
+        for slice[i:j] in sequence:
+            print(slice)
 
     with open(database, "r") as t_file:
         table = csv.DictReader(t_file)
