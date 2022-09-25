@@ -10,15 +10,15 @@ def main():
     txtfile  =sys.argv[2]
 
 
+    with open(txtfile,"r") as s_file:
+            sequence = s_file.read()
+            print(sequence)
 
-
-
-    with open(txtfile,"r") as s_file,open(database,"r") as t_file: #open the two files @same time
-        table = csv.DictReader(t_file) #to compare with
+    with open(database,"r") as t_file:
+        table = csv.DictReader(t_file)
         for data in table:
             print(data["AGATC"])
-        sequence = s_file.read()
-        print(sequence)
+
 
 
     # TODO: Read DNA sequence file into a variable
