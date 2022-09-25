@@ -16,7 +16,7 @@ for letter in string: # getting l,s
 
 L = l/w *100
 S = s/w *100
-eq =int(0.0588 * L - 0.296 * S - 15.8)
+eq =round(0.0588 * L - 0.296 * S - 15.8)
 
 if(eq<1):
     print("Before Grade 1")
