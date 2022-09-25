@@ -24,13 +24,13 @@ def main():
 
 
     #  Find longest match of each STR in DNA sequence
-    list_dna = [ "AGATC",]
+
     AGATC = longest_match(sequence,"AGATC")
     AATG  = longest_match(sequence,"AATG")
     TATC  = longest_match(sequence,"TATC")
-    print(AGATC,AATG,TATC)
+   
     for i in compare:
-        if(i["AGATC"] == AGATC and  i["AATG"] == AATG and i["TATC"] == TATC ):
+        if(int(i["AGATC"]) == AGATC and  int(i["AATG"]) == AATG and int(i["TATC"]) == TATC ):
             print(i["name"])
             sys.exit()
     print("No match")
