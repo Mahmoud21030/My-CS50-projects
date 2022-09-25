@@ -4,14 +4,17 @@ import sys
 
 def main():
 
-    if len(sys.argv) != 3:
-        sys.exit("Usage: python tournament.py FILENAME")
+    if len(sys.argv) != 2:
+        sys.exit("Usage: python dna.py data.csv sequence.txt")
+    database =argv[1]
+    txtfile =sys.argv[2]
 
-    txtfile =sys.argv[1]
 
-    with open(txtfile) as file:
-        sequence = f.read(file)
-        print(reader)
+    with open(txtfile) as s_file ,with open(database) as t_file:
+        table = csv.DictReader(t_file)
+        sequence = s_file.read()
+        print(sequence)
+        print(table)
 
     # TODO: Read DNA sequence file into a variable
 
