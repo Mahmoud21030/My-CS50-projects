@@ -25,10 +25,13 @@ def main():
 
     #  Find longest match of each STR in DNA sequence
 
-    AGATC = longest_match(sequence,"AGATC")
-    AATG  = longest_match(sequence,"AATG")
-    TATC  = longest_match(sequence,"TATC")
-    print(AGATC,AATG,TATC)
+
+    keys =list(compare[0].keys())[1:]
+    results={}
+    for i in keys:
+        results[i].append(longest_match(sequence,i))
+        print(results)
+
     for i in compare:
         if(int(i["AGATC"]) == AGATC and  int(i["AATG"]) == AATG and int(i["TATC"]) == TATC ):
             print(i["name"])
