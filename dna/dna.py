@@ -31,13 +31,16 @@ def main():
     for i in keys:
         results[i]= longest_match(sequence,i)
         print(results)
-
+    counter=0
     for j in range(len(compare)):
+        for i in keys:
+            if( int(compare[j][i]) == int(results[i])):
+                counter+=1
+                if(counter == len(keys)):
+                    print(compare[j]["name"])
+                    break;
 
-           # if( int(compare[j][i]) == int(results[i])):
-        print((compare[j])[keys[1:]])
-
-    # TODO: Check database for matching profiles
+   
 
     return
 
