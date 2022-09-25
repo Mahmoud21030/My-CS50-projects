@@ -3,7 +3,7 @@ import sys
 
 
 def main():
-
+    compare=[]
     if len(sys.argv) != 3:
         sys.exit("Usage: python dna.py data.csv sequence.txt")
     database =sys.argv[1]
@@ -17,7 +17,7 @@ def main():
     with open(database,"r") as t_file:
         table = csv.DictReader(t_file)
         for data in table:
-            compare =dict(data)
+            compare.add([data])
             print(compare)
 
 
