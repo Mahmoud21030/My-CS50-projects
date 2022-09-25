@@ -30,14 +30,14 @@ def main():
     results={}
     for i in keys:
         results[i]= longest_match(sequence,i)
-        print(results)
+        #print(results)
     counter=0
     for j in range(len(compare)):
         for i in keys:
             if( int(compare[j][i]) == int(results[i])):
                 counter+=1
                 if(counter == len(keys)):
-                    #print(compare[j]["name"])
+                    print(compare[j]["name"])
                     sys.exit();
     print("No match")
 
