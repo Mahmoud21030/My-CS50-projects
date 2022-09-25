@@ -9,6 +9,7 @@ def main():
   #  else:
       #  print ("INVALID")
 
+
 def validity(userinput, islast):
     # list = [int(num) for num in userinput]
     sum = 0
@@ -25,6 +26,7 @@ def validity(userinput, islast):
             islast = True
     return sum
 
+
 def cardtype(credit):
     print(len(credit))
     print(credit[0])
@@ -33,12 +35,13 @@ def cardtype(credit):
         return "AMEX"
     elif len(credit) == 16 and credit[0] == 5 and credit[1] <= 5:
         return "MASTERCARD"
-    elif credit[0] == 4 and len(credit) == 13:
+    elif credit[0] == '4' and len(credit) == 13:
         return "VISA"
     elif credit[0] == 4 or len(credit) == 16:
         return "VISA"
     else:
         return "INVALID"
+
 
 if __name__ == "__main__":
     main()
