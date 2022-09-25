@@ -33,9 +33,9 @@ def main():
         print(results)
 
     for j in range(len(compare)):
-        for i in keys[1:]:
+
            # if( int(compare[j][i]) == int(results[i])):
-            print((compare[j])[i])
+        print((compare[j])[keys[1:]])
 
     # TODO: Check database for matching profiles
 
