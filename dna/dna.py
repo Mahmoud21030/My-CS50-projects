@@ -11,10 +11,12 @@ def main():
 
 
 
-    with open(database,"r") as t_file:
-        data = csv.DictReader(t_file)
-        print(data)
-    with open(txtfile,"r") as s_file:
+
+
+    with open(txtfile,"r") as s_file,open(database,"r") as t_file: #open the two files @same time
+        table = csv.DictReader(t_file) #to compare with
+        for data in table:
+            print(data["AGATC"])
         sequence = s_file.read()
         print(sequence)
 
