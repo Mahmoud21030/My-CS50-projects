@@ -13,7 +13,7 @@ def main():
 
     with open(database,"r") as t_file:
         table = csv.DictReader(t_file)
-        print(table)
+        print(table["Alice"])
     with open(txtfile,"r") as s_file:
         sequence = s_file.read()
         print(sequence)
