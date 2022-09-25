@@ -19,3 +19,4 @@ nickels = int(change/5)
 pennies = change - nickels*5  # pennies is the rest
 
 print(int(quarter + dime + nickels + pennies))  # sum of them all
+
