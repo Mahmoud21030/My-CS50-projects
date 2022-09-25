@@ -17,7 +17,8 @@ def main():
     with open(database,"r") as t_file:
         table = csv.DictReader(t_file)
         for data in table:
-            print(data["AGATC"])
+            compare =dict(data)
+            print(compare)
 
 
 
