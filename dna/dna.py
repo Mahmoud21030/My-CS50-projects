@@ -3,14 +3,11 @@ import sys
 
 
 def main():
-    sys.argv
-    if(len(sys.argv) == 2):
-        #database = argv[1]
-        txtfile  = argv[0]
-    else:
-        print("Usage: python dna.py data.csv sequence.txt")
-        sys.exit()
 
+    if len(sys.argv) != 3:
+        sys.exit("Usage: python tournament.py FILENAME")
+
+    txtfile =sys.argv[1]
 
     with open(txtfile) as file:
         sequence = f.read(file)
