@@ -19,29 +19,25 @@ def main():
         table = csv.DictReader(t_file)
         for data in table:
             compare.append(data)
-    #print(compare["AGATC"])
-
-
+    # print(compare["AGATC"])
 
     #  Find longest match of each STR in DNA sequence
 
-
-    keys =list(compare[0].keys())[1:]
-    results={}
+    keys = list(compare[0].keys())[1:]
+    results = {}
     for i in keys:
-        results[i]= longest_match(sequence,i)
+        results[i] = longest_match(sequence, i)
        # print(results)
-    counter=0
+    counter = 0
     for j in range(len(compare)):
-        counter =0
+        counter = 0
         for i in keys:
-            if( int(compare[j][i]) == int(results[i])):
-                counter+=1
-                if(counter == len(keys)):
+            if (int(compare[j][i]) == int(results[i])):
+                counter += 1
+                if (counter == len(keys)):
                     print(compare[j]["name"])
-                    sys.exit();
+                    sys.exit()
     print("No match")
-
 
     return
 
