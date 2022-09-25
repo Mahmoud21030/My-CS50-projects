@@ -14,18 +14,25 @@ def main():
 
     with open(txtfile, "r") as s_file:
         sequence = s_file.read()
-        for slice(1:4) in sequence:
-            print(slice)
 
     with open(database, "r") as t_file:
         table = csv.DictReader(t_file)
         for data in table:
             compare.append(data)
-    #print(compare[0]["AGATC"])
+    #print(compare["AGATC"])
 
-    # TODO: Read DNA sequence file into a variable
 
-    # TODO: Find longest match of each STR in DNA sequence
+
+    #  Find longest match of each STR in DNA sequence
+    list_dna = [ "AGATC",]
+    AGATC = longest_match(sequence,"AGATC")
+    AATG  = longest_match(sequence,"AATG")
+    TATC  = longest_match(sequence,"TATC")
+    for i in compare:
+        if(i["AGATC"] == AGATC and  i["AATG"] == AATG and i["TATC"] == TATC ):
+            print(i["name"])
+            sys.exit()
+    print("No match")
 
     # TODO: Check database for matching profiles
 
