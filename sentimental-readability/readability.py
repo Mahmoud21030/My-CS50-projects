@@ -23,5 +23,5 @@ if(eq<1):
 if(eq>16):
     print("Grade 16+")
 else:
-    print("Grade "+eq)
+    print("Grade "+str(eq))
 
