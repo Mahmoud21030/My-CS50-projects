@@ -28,7 +28,7 @@ def main():
     AGATC = longest_match(sequence,"AGATC")
     AATG  = longest_match(sequence,"AATG")
     TATC  = longest_match(sequence,"TATC")
-   
+    print(AGATC,AATG,TATC)
     for i in compare:
         if(int(i["AGATC"]) == AGATC and  int(i["AATG"]) == AATG and int(i["TATC"]) == TATC ):
             print(i["name"])
