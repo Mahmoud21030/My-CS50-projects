@@ -11,6 +11,13 @@
 
 #include "MCU.h"
 
+/**
+ * It takes in the port, pin, and direction (input or output) and sets the pin to the direction
+ *
+ * @param PORT The port you want to use.
+ * @param pin the pin number you want to initialize.
+ * @param dirc 1 for output, 0 for input
+ */
 void inti(uint8_t PORT, uint8_t pin, bool dirc)
 {
   switch (PORT)
