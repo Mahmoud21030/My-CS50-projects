@@ -1,1 +1,2 @@
-SELECT title ,name  FROM movies JOIN (stars JOIN people ON stars.person_id = people.id) ON movies.id = stars.movie_id;
+SELECT  name  FROM movies JOIN (stars JOIN people ON stars.person_id = people.id) ON movies.id = stars.movie_id
+WHERE title LIKE "TOY Story" ;
