@@ -1,1 +1,1 @@
-SELECT movies , rating
+SELECT * From movies JOIN ratings ON movies.id = ratings.movie_id;
