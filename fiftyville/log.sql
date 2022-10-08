@@ -58,7 +58,8 @@ select name,transcript from interviews  WHERE year = 2021 AND month = 7 AND day 
 --| 313 | 81061156       | 2021 | 7     | 28  | Leggett Street | withdraw         | 30     |
 --| 336 | 26013199       | 2021 | 7     | 28  | Leggett Street | withdraw         | 35     |
 
-sqlite> WHERE year = 2021 AND month = 7 AND day =28 AND atm_location LIKE "Leggett Street"  AND transaction_type = "withdraw");
+SELECT person_id FROM bank_accounts WHERE account_number IN
+( SELECT account_number FROM atm_transactions  WHERE year = 2021 AND month = 7 AND day =28 AND atm_location LIKE "Leggett Street"  AND transaction_type = "withdraw");
 --+----------------+-----------+---------------+
 --| account_number | person_id | creation_year |
 --+----------------+-----------+---------------+
