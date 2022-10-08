@@ -162,3 +162,4 @@ AND phone_number IN (SELECT caller FROM phone_calls  WHERE year = 2021 AND month
 --| 36        | 1988161715      | 6D   |
 --| 54        | 3592750733      | 6C   |
 -----------+-----------------+------+
+
