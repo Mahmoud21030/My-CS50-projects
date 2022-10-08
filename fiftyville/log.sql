@@ -90,3 +90,34 @@ SELECT * FROM people WHERE license_plate IN
 --+--------+---------+----------------+-----------------+---------------+
 
 SELECT * FROM people WHERE id IN
+(SELECT person_id FROM bank_accounts WHERE account_number IN
+( SELECT account_number FROM atm_transactions  WHERE year = 2021 AND month = 7 AND day =28 AND atm_location LIKE "Leggett Street"  AND transaction_type = "withdraw"));
+--+--------+---------+----------------+-----------------+---------------+
+--|   id   |  name   |  phone_number  | passport_number | license_plate |
+--+--------+---------+----------------+-----------------+---------------+
+--| 395717 | Kenny   | (826) 555-1652 | 9878712108      | 30G67EN       |
+--| 396669 | Iman    | (829) 555-5269 | 7049073643      | L93JTIZ       |
+--| 438727 | Benista | (338) 555-6650 | 9586786673      | 8X428L0       |
+--| 449774 | Taylor  | (286) 555-6063 | 1988161715      | 1106N58       |
+--| 458378 | Brooke  | (122) 555-4581 | 4408372428      | QX4YZN3       |
+--| 467400 | Luca    | (389) 555-5198 | 8496433585      | 4328GD8       |
+--| 514354 | Diana   | (770) 555-1861 | 3592750733      | 322W7JE       |
+--| 686048 | Bruce   | (367) 555-5533 | 5773159633      | 94KL13X       |
+--+--------+---------+----------------+-----------------+---------------+
+
+SELECT name FROM people WHERE name IN
+(SELECT name FROM people WHERE id IN
+(SELECT person_id FROM bank_accounts WHERE account_number IN
+( SELECT account_number FROM atm_transactions  WHERE year = 2021 AND month = 7 AND day =28 AND atm_location LIKE "Leggett Street"  AND transaction_type = "withdraw")))
+AND name IN (SELECT name FROM people WHERE license_plate IN
+(SELECT  license_plate FROM bakery_security_logs  WHERE year = 2021 AND month = 7 AND day =28 AND hour = 10  AND minute >=16 AND activity = "exit"));
+
+--+--------+
+--|  name  |
+--+--------+
+--| Iman   |
+--| Taylor |
+--| Luca   |
+--| Diana  |
+--| Bruce  |
+-----------+
