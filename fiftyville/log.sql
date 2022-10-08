@@ -33,7 +33,7 @@ select name,transcript from interviews  WHERE year = 2021 AND month = 7 AND day 
 -- flight out of Fiftyville tomorrow.
 -- The thief then asked the person on the other end of the phone to purchase the flight ticket. |
 
- SELECT  license_plate FROM bakery_security_logs  WHERE year = 2021 AND month = 7 AND day =28 AND hour = 10  AND minute >=16 AND activity = "exit";
+ SELECT  license_plate,minute FROM bakery_security_logs  WHERE year = 2021 AND month = 7 AND day =28 AND hour = 10  AND minute >=16 AND activity = "exit";
 --| activity | license_plate | minute |
 --+----------+---------------+--------+
 --| exit     | 5P2BI95       | 16     |
