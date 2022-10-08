@@ -36,8 +36,6 @@ select name,transcript from interviews  WHERE year = 2021 AND month = 7 AND day 
  SELECT activity , license_plate,minute  FROM bakery_security_logs  WHERE year = 2021 AND month = 7 AND day =28 AND hour = 10 ;
 --| activity | license_plate | minute |
 --+----------+---------------+--------+
---| entrance | R3G7486       | 8      |
---| entrance | 13FNH73       | 14     |
 --| exit     | 5P2BI95       | 16     |
 --| exit     | 94KL13X       | 18     |
 --| exit     | 6P58WS2       | 18     |
@@ -46,10 +44,6 @@ select name,transcript from interviews  WHERE year = 2021 AND month = 7 AND day 
 --| exit     | L93JTIZ       | 21     |
 --| exit     | 322W7JE       | 23     |
 --| exit     | 0NTHK55       | 23     |
---| exit     | 1106N58       | 35     |
---| entrance | NRYN856       | 42     |
---| entrance | WD5M8I6       | 44     |
---| entrance | V47T75I       | 55     |
 
  SELECT * FROM atm_transactions  WHERE year = 2021 AND month = 7 AND day =28 AND atm_location LIKE "Leggett Street" ;
 --+-----+----------------+------+-------+-----+----------------+------------------+--------+
