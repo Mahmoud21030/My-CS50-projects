@@ -57,3 +57,17 @@ select name,transcript from interviews  WHERE year = 2021 AND month = 7 AND day 
 --| 288 | 25506511       | 2021 | 7     | 28  | Leggett Street | withdraw         | 20     |
 --| 313 | 81061156       | 2021 | 7     | 28  | Leggett Street | withdraw         | 30     |
 --| 336 | 26013199       | 2021 | 7     | 28  | Leggett Street | withdraw         | 35     |
+
+sqlite> WHERE year = 2021 AND month = 7 AND day =28 AND atm_location LIKE "Leggett Street"  AND transaction_type = "withdraw");
+--+----------------+-----------+---------------+
+--| account_number | person_id | creation_year |
+--+----------------+-----------+---------------+
+--| 49610011       | 686048    | 2010          |
+--| 26013199       | 514354    | 2012          |
+--| 16153065       | 458378    | 2012          |
+--| 28296815       | 395717    | 2014          |
+--| 25506511       | 396669    | 2014          |
+--| 28500762       | 467400    | 2014          |
+--| 76054385       | 449774    | 2015          |
+--| 81061156       | 438727    | 2018          |
+--+----------------+-----------+---------------+
