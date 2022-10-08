@@ -89,3 +89,4 @@ SELECT * FROM people WHERE license_plate IN
 --| 686048 | Bruce   | (367) 555-5533 | 5773159633      | 94KL13X       |
 --+--------+---------+----------------+-----------------+---------------+
 
+SELECT * FROM people WHERE id IN
