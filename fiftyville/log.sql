@@ -169,3 +169,4 @@ AND phone_number IN (SELECT caller FROM phone_calls  WHERE year = 2021 AND month
 --| Diana  | (770) 555-1861 | 3592750733      |
 --| Bruce  | (367) 555-5533 | 5773159633      |
 --------+----------------+-----------------+
+ SELECT * FROM flights WHERE origin_airport_id =8 AND year = 2021 AND month = 7 AND day =28;
