@@ -3,7 +3,6 @@
 -- they called someone who talked to them for less than a minute
 --flight out of Fiftyville tomorrow.
 
-
 -- Keep a log of any SQL queries you execute as you solve the mystery.
 --airports              crime_scene_reports   people
 --atm_transactions      flights               phone_calls
@@ -33,3 +32,21 @@ select name,transcript from interviews  WHERE year = 2021 AND month = 7 AND day 
 -- In the call, I heard the thief say that they were planning to take the earliest
 -- flight out of Fiftyville tomorrow.
 -- The thief then asked the person on the other end of the phone to purchase the flight ticket. |
+
+sqlite> SELECT activity , license_plate,minute  FROM bakery_security_logs  WHERE year = 2021 AND month = 7 AND day =28 AND hour = 10 ;
+--| activity | license_plate | minute |
+--+----------+---------------+--------+
+--| entrance | R3G7486       | 8      |
+--| entrance | 13FNH73       | 14     |
+--| exit     | 5P2BI95       | 16     |
+--| exit     | 94KL13X       | 18     |
+--| exit     | 6P58WS2       | 18     |
+--| exit     | 4328GD8       | 19     |
+--| exit     | G412CB7       | 20     |
+--| exit     | L93JTIZ       | 21     |
+--| exit     | 322W7JE       | 23     |
+--| exit     | 0NTHK55       | 23     |
+--| exit     | 1106N58       | 35     |
+--| entrance | NRYN856       | 42     |
+--| entrance | WD5M8I6       | 44     |
+--| entrance | V47T75I       | 55     |
