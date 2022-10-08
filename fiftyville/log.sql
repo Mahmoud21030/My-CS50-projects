@@ -8,7 +8,7 @@
 --atm_transactions      flights               phone_calls
 --bakery_security_logs  interviews
 --bank_accounts         passengers
-sqlite> .schema crime_scene_reports -- the structure of the crime_scene_reports
+ .schema crime_scene_reports -- the structure of the crime_scene_reports
 SELECT * FROM crime_scene_reports WHERE year = 2021 AND month = 7 AND day =28 AND street LIKE "Humphrey Street" ; --info from data
 --Theft of the CS50 duck took place at 10:15am
 --at the Humphrey Street bakery. Interviews were
@@ -33,7 +33,7 @@ select name,transcript from interviews  WHERE year = 2021 AND month = 7 AND day 
 -- flight out of Fiftyville tomorrow.
 -- The thief then asked the person on the other end of the phone to purchase the flight ticket. |
 
-sqlite> SELECT activity , license_plate,minute  FROM bakery_security_logs  WHERE year = 2021 AND month = 7 AND day =28 AND hour = 10 ;
+ SELECT activity , license_plate,minute  FROM bakery_security_logs  WHERE year = 2021 AND month = 7 AND day =28 AND hour = 10 ;
 --| activity | license_plate | minute |
 --+----------+---------------+--------+
 --| entrance | R3G7486       | 8      |
@@ -50,3 +50,16 @@ sqlite> SELECT activity , license_plate,minute  FROM bakery_security_logs  WHERE
 --| entrance | NRYN856       | 42     |
 --| entrance | WD5M8I6       | 44     |
 --| entrance | V47T75I       | 55     |
+
+ SELECT * FROM atm_transactions  WHERE year = 2021 AND month = 7 AND day =28 AND atm_location LIKE "Leggett Street" ;
+--+-----+----------------+------+-------+-----+----------------+------------------+--------+
+--| id  | account_number | year | month | day |  atm_location  | transaction_type | amount |
+--+-----+----------------+------+-------+-----+----------------+------------------+--------+
+--| 246 | 28500762       | 2021 | 7     | 28  | Leggett Street | withdraw         | 48     |
+--| 264 | 28296815       | 2021 | 7     | 28  | Leggett Street | withdraw         | 20     |
+--| 266 | 76054385       | 2021 | 7     | 28  | Leggett Street | withdraw         | 60     |
+--| 267 | 49610011       | 2021 | 7     | 28  | Leggett Street | withdraw         | 50     |
+--| 269 | 16153065       | 2021 | 7     | 28  | Leggett Street | withdraw         | 80     |
+--| 288 | 25506511       | 2021 | 7     | 28  | Leggett Street | withdraw         | 20     |
+--| 313 | 81061156       | 2021 | 7     | 28  | Leggett Street | withdraw         | 30     |
+--| 336 | 26013199       | 2021 | 7     | 28  | Leggett Street | withdraw         | 35     |
