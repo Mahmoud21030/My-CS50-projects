@@ -105,7 +105,7 @@ SELECT * FROM people WHERE id IN
 --| 686048 | Bruce   | (367) 555-5533 | 5773159633      | 94KL13X       |
 --+--------+---------+----------------+-----------------+---------------+
 
-SELECT name FROM people WHERE name IN
+SELECT name , phone_number FROM people WHERE name IN
 (SELECT name FROM people WHERE id IN
 (SELECT person_id FROM bank_accounts WHERE account_number IN
 ( SELECT account_number FROM atm_transactions  WHERE year = 2021 AND month = 7 AND day =28 AND atm_location LIKE "Leggett Street"  AND transaction_type = "withdraw")))
@@ -121,3 +121,12 @@ AND name IN (SELECT name FROM people WHERE license_plate IN
 --| Diana  |
 --| Bruce  |
 -----------+
+--------+----------------+
+--|  name  |  phone_number  |
+--------+----------------+
+--| Iman   | (829) 555-5269 |
+--| Taylor | (286) 555-6063 |
+--| Luca   | (389) 555-5198 |
+--| Diana  | (770) 555-1861 |
+--| Bruce  | (367) 555-5533 |
+-------+----------------+
