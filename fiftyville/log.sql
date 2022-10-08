@@ -1,5 +1,5 @@
 -- place at 10:15am
---Earlier this morning by the ATM on Leggett Street
+--Earlier this morning by the ATM on Leggett Street there withdrawing some money
 -- they called someone who talked to them for less than a minute
 --flight out of Fiftyville tomorrow.
 
