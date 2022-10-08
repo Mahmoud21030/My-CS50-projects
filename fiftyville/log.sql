@@ -33,7 +33,7 @@ select name,transcript from interviews  WHERE year = 2021 AND month = 7 AND day 
 -- flight out of Fiftyville tomorrow.
 -- The thief then asked the person on the other end of the phone to purchase the flight ticket. |
 
- SELECT activity , license_plate,minute  FROM bakery_security_logs  WHERE year = 2021 AND month = 7 AND day =28 AND hour = 10 ;
+ SELECT activity , license_plate,minute  FROM bakery_security_logs  WHERE year = 2021 AND month = 7 AND day =28 AND hour = 10  AND minute >=16 AND activity = "exit";
 --| activity | license_plate | minute |
 --+----------+---------------+--------+
 --| exit     | 5P2BI95       | 16     |
@@ -45,7 +45,7 @@ select name,transcript from interviews  WHERE year = 2021 AND month = 7 AND day 
 --| exit     | 322W7JE       | 23     |
 --| exit     | 0NTHK55       | 23     |
 
- SELECT * FROM atm_transactions  WHERE year = 2021 AND month = 7 AND day =28 AND atm_location LIKE "Leggett Street" ;
+ SELECT * FROM atm_transactions  WHERE year = 2021 AND month = 7 AND day =28 AND atm_location LIKE "Leggett Street"  AND transaction_type = "withdraw";
 --+-----+----------------+------+-------+-----+----------------+------------------+--------+
 --| id  | account_number | year | month | day |  atm_location  | transaction_type | amount |
 --+-----+----------------+------+-------+-----+----------------+------------------+--------+
