@@ -1,3 +1,9 @@
+-- place at 10:15am
+--Earlier this morning by the ATM on Leggett Street
+-- they called someone who talked to them for less than a minute
+--flight out of Fiftyville tomorrow.
+
+
 -- Keep a log of any SQL queries you execute as you solve the mystery.
 --airports              crime_scene_reports   people
 --atm_transactions      flights               phone_calls
