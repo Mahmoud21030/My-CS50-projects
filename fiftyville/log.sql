@@ -180,4 +180,11 @@ AND name IN (SELECT name FROM people WHERE license_plate IN
 AND phone_number IN (SELECT caller FROM phone_calls  WHERE year = 2021 AND month = 7 AND day =28 AND duration < 60)));
 --| 36 | 8                 | 4                      | 2021 | 7     | 29  | 8    | 20
 
-SELECT
+ SELECT * FROM airports WHERE id =4;
+ --+----+--------------+-------------------+---------------+
+--| id | abbreviation |     full_name     |     city      |
+--+----+--------------+-------------------+---------------+
+--| 4  | LGA          | LaGuardia Airport | New York City |
+----+--------------+-------------------+---------------+
+
+
