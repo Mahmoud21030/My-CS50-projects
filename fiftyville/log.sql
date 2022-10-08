@@ -45,7 +45,7 @@ select name,transcript from interviews  WHERE year = 2021 AND month = 7 AND day 
 --| exit     | 322W7JE       | 23     |
 --| exit     | 0NTHK55       | 23     |
 
- SELECT * FROM atm_transactions  WHERE year = 2021 AND month = 7 AND day =28 AND atm_location LIKE "Leggett Street"  AND transaction_type = "withdraw";
+ SELECT account_number FROM atm_transactions  WHERE year = 2021 AND month = 7 AND day =28 AND atm_location LIKE "Leggett Street"  AND transaction_type = "withdraw";
 --+-----+----------------+------+-------+-----+----------------+------------------+--------+
 --| id  | account_number | year | month | day |  atm_location  | transaction_type | amount |
 --+-----+----------------+------+-------+-----+----------------+------------------+--------+
